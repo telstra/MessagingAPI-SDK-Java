@@ -71,7 +71,7 @@ public class MessagingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5677417277196003009L;
+            private static final long serialVersionUID = 4772170239472638372L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -208,7 +208,7 @@ public class MessagingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4622162075459589547L;
+            private static final long serialVersionUID = 5340306992165009990L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -344,7 +344,7 @@ public class MessagingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 4731649903329006644L;
+            private static final long serialVersionUID = 5217211748284325582L;
             {
                     put( "messageId", messageId );
             }});
@@ -353,7 +353,7 @@ public class MessagingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5410451727054439453L;
+            private static final long serialVersionUID = 5455860283507862185L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -490,7 +490,7 @@ public class MessagingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5559637462802127230L;
+            private static final long serialVersionUID = 5099203176934570217L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -620,7 +620,7 @@ public class MessagingController extends BaseController {
 
         //process template parameters
         APIHelper.appendUrlWithTemplateParameters(_queryBuilder, new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5384416980960678478L;
+            private static final long serialVersionUID = 4617674287697457401L;
             {
                     put( "messageid", messageid );
             }});
@@ -629,7 +629,7 @@ public class MessagingController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5362967240397977531L;
+            private static final long serialVersionUID = 5680512999618930894L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

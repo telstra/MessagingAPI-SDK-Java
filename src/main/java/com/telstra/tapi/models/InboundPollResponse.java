@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class InboundPollResponse 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5220634803421915971L;
+    private static final long serialVersionUID = 4957852638148347034L;
     private String destinationAddress;
     private String senderAddress;
     private String message;

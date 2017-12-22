@@ -13,7 +13,7 @@ import com.telstra.tapi.http.client.HttpContext;
 public class ErrorErrorErrorErrorErrorException 
         extends APIException
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5243595421844546403L;
+    private static final long serialVersionUID = 5670765661072459315L;
     private Integer status;
     private String message;
     /** GETTER

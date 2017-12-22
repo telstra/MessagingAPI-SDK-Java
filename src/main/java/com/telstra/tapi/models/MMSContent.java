@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class MMSContent 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 4812118842490962202L;
+    private static final long serialVersionUID = 5408988866024065737L;
     private String type;
     private String filename;
     private String payload;

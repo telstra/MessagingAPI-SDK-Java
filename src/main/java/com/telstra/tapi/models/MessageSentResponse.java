@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class MessageSentResponse 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5511136970832057330L;
+    private static final long serialVersionUID = 5303143642318107286L;
     private List<Message> messages;
     private String messageType;
     private int numberSegments;

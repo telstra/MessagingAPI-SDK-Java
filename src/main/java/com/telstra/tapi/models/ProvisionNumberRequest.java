@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class ProvisionNumberRequest 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5398568102450065291L;
+    private static final long serialVersionUID = 4614484852047807276L;
     private Integer activeDays;
     private String notifyURL;
     /** GETTER

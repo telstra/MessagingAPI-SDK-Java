@@ -82,7 +82,7 @@ public class OAuthAuthorizationController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4829676657813042672L;
+            private static final long serialVersionUID = 4852306604759905318L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -92,7 +92,7 @@ public class OAuthAuthorizationController extends BaseController {
 
         //load all fields for the outgoing API request
         Map<String, Object> _parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5734729569695835187L;
+            private static final long serialVersionUID = 5602254632560284035L;
             {
                     put( "grant_type", "client_credentials" );
                     put( "scope", scope );

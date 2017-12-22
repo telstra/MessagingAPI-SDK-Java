@@ -43,7 +43,7 @@ public class Configuration {
     public static String getBaseUri(Servers server) {
         StringBuilder baseUrl = new StringBuilder(environmentsMap.get(Configuration.environment).get(server));
         Map<String, Object> parameters = new HashMap<String, Object>() {
-            private static final long serialVersionUID = 5234261786751979623L;
+            private static final long serialVersionUID = 5155840294945607302L;
             {
             }
         };
@@ -63,13 +63,13 @@ public class Configuration {
      * Map of all base URLs by environments and server aliases 
      */
     private static EnumMap<Environments, EnumMap<Servers, String>> environmentsMap = new EnumMap<Environments, EnumMap<Servers,String>>(Environments.class) {
-        private static final long serialVersionUID = 5438659565229805614L;
+        private static final long serialVersionUID = 5460530319400400933L;
         {
             put(Environments.PRODUCTION , new EnumMap<Servers, String>(Servers.class) {
-                private static final long serialVersionUID = 4664686221016609865L;
+                private static final long serialVersionUID = 5346075143957334918L;
                 {
                     put(Servers.DEFAULT, "https://tapi.telstra.com/v2");
-                    put(Servers.ACCESS_TOKEN_SERVER, "https://tapi.telstra.com/v1/oauth");
+                    put(Servers.ACCESS_TOKEN_SERVER, "https://tapi.telstra.com/v2/oauth");
                 }
             });
         }

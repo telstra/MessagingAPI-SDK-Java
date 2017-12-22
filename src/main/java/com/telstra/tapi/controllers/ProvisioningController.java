@@ -71,7 +71,7 @@ public class ProvisioningController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5429948828309133681L;
+            private static final long serialVersionUID = 5110126337912558679L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "Authorization", OAuthManager.getInstance().getAuthorizationHeader());
@@ -184,7 +184,7 @@ public class ProvisioningController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 5196908387893632713L;
+            private static final long serialVersionUID = 5479215441719992945L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );
@@ -303,7 +303,7 @@ public class ProvisioningController extends BaseController {
 
         //load all headers for the outgoing API request
         Map<String, String> _headers = new HashMap<String, String>() {
-            private static final long serialVersionUID = 4878589821440245549L;
+            private static final long serialVersionUID = 5100770655859097233L;
             {
                     put( "user-agent", "APIMATIC 2.0" );
                     put( "accept", "application/json" );

@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 
 public class SendMMSRequest 
         implements java.io.Serializable {
-    private static final long serialVersionUID = 5048712816112783144L;
+    private static final long serialVersionUID = 5283453689165821962L;
     private String from;
     private String to;
     private String subject;
