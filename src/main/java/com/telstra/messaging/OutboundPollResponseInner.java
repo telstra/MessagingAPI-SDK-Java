@@ -25,10 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * OutboundPollResponse
+ * OutboundPollResponseInner
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
-public class OutboundPollResponse {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-08T21:54:42.448+11:00")
+public class OutboundPollResponseInner {
   @SerializedName("to")
   private String to = null;
 
@@ -41,7 +41,7 @@ public class OutboundPollResponse {
   @SerializedName("deliveryStatus")
   private Status deliveryStatus = null;
 
-  public OutboundPollResponse to(String to) {
+  public OutboundPollResponseInner to(String to) {
     this.to = to;
     return this;
   }
@@ -59,7 +59,7 @@ public class OutboundPollResponse {
     this.to = to;
   }
 
-  public OutboundPollResponse receivedTimestamp(String receivedTimestamp) {
+  public OutboundPollResponseInner receivedTimestamp(String receivedTimestamp) {
     this.receivedTimestamp = receivedTimestamp;
     return this;
   }
@@ -77,7 +77,7 @@ public class OutboundPollResponse {
     this.receivedTimestamp = receivedTimestamp;
   }
 
-  public OutboundPollResponse sentTimestamp(String sentTimestamp) {
+  public OutboundPollResponseInner sentTimestamp(String sentTimestamp) {
     this.sentTimestamp = sentTimestamp;
     return this;
   }
@@ -95,7 +95,7 @@ public class OutboundPollResponse {
     this.sentTimestamp = sentTimestamp;
   }
 
-  public OutboundPollResponse deliveryStatus(Status deliveryStatus) {
+  public OutboundPollResponseInner deliveryStatus(Status deliveryStatus) {
     this.deliveryStatus = deliveryStatus;
     return this;
   }
@@ -122,11 +122,11 @@ public class OutboundPollResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OutboundPollResponse outboundPollResponse = (OutboundPollResponse) o;
-    return Objects.equals(this.to, outboundPollResponse.to) &&
-        Objects.equals(this.receivedTimestamp, outboundPollResponse.receivedTimestamp) &&
-        Objects.equals(this.sentTimestamp, outboundPollResponse.sentTimestamp) &&
-        Objects.equals(this.deliveryStatus, outboundPollResponse.deliveryStatus);
+    OutboundPollResponseInner outboundPollResponseInner = (OutboundPollResponseInner) o;
+    return Objects.equals(this.to, outboundPollResponseInner.to) &&
+        Objects.equals(this.receivedTimestamp, outboundPollResponseInner.receivedTimestamp) &&
+        Objects.equals(this.sentTimestamp, outboundPollResponseInner.sentTimestamp) &&
+        Objects.equals(this.deliveryStatus, outboundPollResponseInner.deliveryStatus);
   }
 
   @Override
@@ -138,7 +138,7 @@ public class OutboundPollResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OutboundPollResponse {\n");
+    sb.append("class OutboundPollResponseInner {\n");
     
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
     sb.append("    receivedTimestamp: ").append(toIndentedString(receivedTimestamp)).append("\n");

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="getMMSStatus"></a>
 # **getMMSStatus**
-> OutboundPollResponse getMMSStatus(messageid)
+> List&lt;OutboundPollResponse&gt; getMMSStatus(messageid)
 
 Get MMS Status
 
@@ -37,7 +37,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 MessagingApi apiInstance = new MessagingApi();
 String messageid = "messageid_example"; // String | Unique identifier of a message - it is the value returned from a previous POST call to https://api.telstra.com/v2/messages/mms
 try {
-    OutboundPollResponse result = apiInstance.getMMSStatus(messageid);
+    List<OutboundPollResponse> result = apiInstance.getMMSStatus(messageid);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#getMMSStatus");
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutboundPollResponse**](OutboundPollResponse.md)
+[**List&lt;OutboundPollResponse&gt;**](OutboundPollResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a name="getSMSStatus"></a>
 # **getSMSStatus**
-> OutboundPollResponse getSMSStatus(messageId)
+> List&lt;OutboundPollResponse&gt; getSMSStatus(messageId)
 
 Get SMS Status
 
@@ -90,7 +90,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 MessagingApi apiInstance = new MessagingApi();
 String messageId = "messageId_example"; // String | Unique identifier of a message - it is the value returned from a previous POST call to https://api.telstra.com/v2/messages/sms
 try {
-    OutboundPollResponse result = apiInstance.getSMSStatus(messageId);
+    List<OutboundPollResponse> result = apiInstance.getSMSStatus(messageId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#getSMSStatus");
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutboundPollResponse**](OutboundPollResponse.md)
+[**List&lt;OutboundPollResponse&gt;**](OutboundPollResponse.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 <a name="retrieveSMSResponses"></a>
 # **retrieveSMSResponses**
-> List&lt;InboundPollResponse&gt; retrieveSMSResponses()
+> InboundPollResponse retrieveSMSResponses()
 
 Retrieve SMS Responses
 
@@ -142,7 +142,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
 try {
-    List<InboundPollResponse> result = apiInstance.retrieveSMSResponses();
+    InboundPollResponse result = apiInstance.retrieveSMSResponses();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#retrieveSMSResponses");
@@ -155,7 +155,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;InboundPollResponse&gt;**](InboundPollResponse.md)
+[**InboundPollResponse**](InboundPollResponse.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ This endpoint does not need any parameter.
 
 <a name="sendMMS"></a>
 # **sendMMS**
-> Object sendMMS(body)
+> MessageSentResponse sendMMS(body)
 
 Send MMS
 
@@ -192,7 +192,7 @@ auth.setAccessToken("YOUR ACCESS TOKEN");
 MessagingApi apiInstance = new MessagingApi();
 SendMmsRequest body = new SendMmsRequest(); // SendMmsRequest | A JSON or XML payload containing the recipient's phone number and MMS message.The recipient number should be in the format '04xxxxxxxx' where x is a digit
 try {
-    Object result = apiInstance.sendMMS(body);
+    MessageSentResponse result = apiInstance.sendMMS(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagingApi#sendMMS");
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**MessageSentResponse**](MessageSentResponse.md)
 
 ### Authorization
 

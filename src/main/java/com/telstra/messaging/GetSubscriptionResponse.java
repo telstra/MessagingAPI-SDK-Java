@@ -24,17 +24,20 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ProvisionNumberRequest
+ * GetSubscriptionResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
-public class ProvisionNumberRequest {
+public class GetSubscriptionResponse {
   @SerializedName("activeDays")
-  private Integer activeDays = null;
+  private String activeDays = null;
 
   @SerializedName("notifyURL")
   private String notifyURL = null;
 
-  public ProvisionNumberRequest activeDays(Integer activeDays) {
+  @SerializedName("destinationAddress")
+  private String destinationAddress = null;
+
+  public GetSubscriptionResponse activeDays(String activeDays) {
     this.activeDays = activeDays;
     return this;
   }
@@ -43,31 +46,49 @@ public class ProvisionNumberRequest {
    * Number of active days
    * @return activeDays
   **/
-  @ApiModelProperty(example = "20", value = "Number of active days")
-  public Integer getActiveDays() {
+  @ApiModelProperty(value = "Number of active days")
+  public String getActiveDays() {
     return activeDays;
   }
 
-  public void setActiveDays(Integer activeDays) {
+  public void setActiveDays(String activeDays) {
     this.activeDays = activeDays;
   }
 
-  public ProvisionNumberRequest notifyURL(String notifyURL) {
+  public GetSubscriptionResponse notifyURL(String notifyURL) {
     this.notifyURL = notifyURL;
     return this;
   }
 
    /**
-   * Notify url
+   * Notify url configured
    * @return notifyURL
   **/
-  @ApiModelProperty(value = "Notify url")
+  @ApiModelProperty(value = "Notify url configured")
   public String getNotifyURL() {
     return notifyURL;
   }
 
   public void setNotifyURL(String notifyURL) {
     this.notifyURL = notifyURL;
+  }
+
+  public GetSubscriptionResponse destinationAddress(String destinationAddress) {
+    this.destinationAddress = destinationAddress;
+    return this;
+  }
+
+   /**
+   * The mobile phone number that was allocated
+   * @return destinationAddress
+  **/
+  @ApiModelProperty(value = "The mobile phone number that was allocated")
+  public String getDestinationAddress() {
+    return destinationAddress;
+  }
+
+  public void setDestinationAddress(String destinationAddress) {
+    this.destinationAddress = destinationAddress;
   }
 
 
@@ -79,24 +100,26 @@ public class ProvisionNumberRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProvisionNumberRequest provisionNumberRequest = (ProvisionNumberRequest) o;
-    return Objects.equals(this.activeDays, provisionNumberRequest.activeDays) &&
-        Objects.equals(this.notifyURL, provisionNumberRequest.notifyURL);
+    GetSubscriptionResponse getSubscriptionResponse = (GetSubscriptionResponse) o;
+    return Objects.equals(this.activeDays, getSubscriptionResponse.activeDays) &&
+        Objects.equals(this.notifyURL, getSubscriptionResponse.notifyURL) &&
+        Objects.equals(this.destinationAddress, getSubscriptionResponse.destinationAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeDays, notifyURL);
+    return Objects.hash(activeDays, notifyURL, destinationAddress);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProvisionNumberRequest {\n");
+    sb.append("class GetSubscriptionResponse {\n");
     
     sb.append("    activeDays: ").append(toIndentedString(activeDays)).append("\n");
     sb.append("    notifyURL: ").append(toIndentedString(notifyURL)).append("\n");
+    sb.append("    destinationAddress: ").append(toIndentedString(destinationAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

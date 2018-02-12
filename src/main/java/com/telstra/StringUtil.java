@@ -13,7 +13,7 @@
 
 package com.telstra;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-06T12:04:52.962+11:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

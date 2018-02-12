@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SendSMSRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-06T12:04:52.962+11:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
 public class SendSMSRequest {
   @SerializedName("to")
   private String to = null;
@@ -112,7 +112,7 @@ public class SendSMSRequest {
    * How long the platform should attempt to deliver the message for. This period is specified in minutes from the message
    * @return validity
   **/
-  @ApiModelProperty(value = "How long the platform should attempt to deliver the message for. This period is specified in minutes from the message")
+  @ApiModelProperty(example = "20", value = "How long the platform should attempt to deliver the message for. This period is specified in minutes from the message")
   public Integer getValidity() {
     return validity;
   }
@@ -130,7 +130,7 @@ public class SendSMSRequest {
    * How long the platform should wait before attempting to send the message - specified in minutes.
    * @return scheduledDelivery
   **/
-  @ApiModelProperty(value = "How long the platform should wait before attempting to send the message - specified in minutes.")
+  @ApiModelProperty(example = "20", value = "How long the platform should wait before attempting to send the message - specified in minutes.")
   public Integer getScheduledDelivery() {
     return scheduledDelivery;
   }

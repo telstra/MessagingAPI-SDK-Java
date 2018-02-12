@@ -27,15 +27,15 @@ import java.io.IOException;
  * Returns error status code and message
  */
 @ApiModel(description = "Returns error status code and message")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
-public class ErrorErrorError {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-08T22:00:21.379+11:00")
+public class ErrorErrorErrorError {
   @SerializedName("status")
   private Integer status = null;
 
   @SerializedName("message")
   private String message = null;
 
-  public ErrorErrorError status(Integer status) {
+  public ErrorErrorErrorError status(Integer status) {
     this.status = status;
     return this;
   }
@@ -53,7 +53,7 @@ public class ErrorErrorError {
     this.status = status;
   }
 
-  public ErrorErrorError message(String message) {
+  public ErrorErrorErrorError message(String message) {
     this.message = message;
     return this;
   }
@@ -80,9 +80,9 @@ public class ErrorErrorError {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorErrorError errorErrorError = (ErrorErrorError) o;
-    return Objects.equals(this.status, errorErrorError.status) &&
-        Objects.equals(this.message, errorErrorError.message);
+    ErrorErrorErrorError errorErrorErrorError = (ErrorErrorErrorError) o;
+    return Objects.equals(this.status, errorErrorErrorError.status) &&
+        Objects.equals(this.message, errorErrorErrorError.message);
   }
 
   @Override
@@ -94,7 +94,7 @@ public class ErrorErrorError {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorErrorError {\n");
+    sb.append("class ErrorErrorErrorError {\n");
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

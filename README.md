@@ -18,7 +18,6 @@ To deploy it to a remote Maven repository instead, configure the settings of the
 mvn deploy
 ```
 
-Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
 
 ### Maven users
 
@@ -48,7 +47,6 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/TelstraMessaging-1.0.0.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -90,7 +88,6 @@ public class AuthenticationApiExample {
 All URIs are relative to *https://tapi.telstra.com/v2*
 
 Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
 *AuthenticationApi* | [**authToken**](docs/AuthenticationApi.md#authToken) | **POST** /oauth/token | Generate authentication token
 *MessagingApi* | [**getMMSStatus**](docs/MessagingApi.md#getMMSStatus) | **GET** /messages/mms/{messageid}/status | Get MMS Status
 *MessagingApi* | [**getSMSStatus**](docs/MessagingApi.md#getSMSStatus) | **GET** /messages/sms/{messageId}/status | Get SMS Status
@@ -104,33 +101,13 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [ErrorError](docs/ErrorError.md)
- - [ErrorErrorError](docs/ErrorErrorError.md)
- - [InboundPollResponse](docs/InboundPollResponse.md)
- - [MMSContent](docs/MMSContent.md)
- - [Message](docs/Message.md)
- - [MessageSentResponse](docs/MessageSentResponse.md)
- - [MessageType](docs/MessageType.md)
- - [OAuthRequest](docs/OAuthRequest.md)
- - [OAuthResponse](docs/OAuthResponse.md)
- - [OutboundPollResponse](docs/OutboundPollResponse.md)
- - [ProvisionNumberRequest](docs/ProvisionNumberRequest.md)
- - [ProvisionNumberResponse](docs/ProvisionNumberResponse.md)
- - [SendMmsRequest](docs/SendMmsRequest.md)
- - [SendSMSRequest](docs/SendSMSRequest.md)
- - [Status](docs/Status.md)
 
 
-## Documentation for Authorization
+## Documentation for Authorisation
 
 Authentication schemes defined for the API:
 ### auth
 
-- **Type**: OAuth
-- **Flow**: application
-- **Authorization URL**: 
-- **Scopes**: 
-  - NSMS: NSMS
 
 
 ## Recommendation

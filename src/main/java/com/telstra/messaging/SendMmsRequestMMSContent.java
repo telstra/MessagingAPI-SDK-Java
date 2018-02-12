@@ -24,10 +24,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * MMSContent
+ * SendMmsRequestMMSContent
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
-public class MMSContent {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-09T15:30:54.049+11:00")
+public class SendMmsRequestMMSContent {
   @SerializedName("type")
   private String type = null;
 
@@ -37,7 +37,7 @@ public class MMSContent {
   @SerializedName("payload")
   private String payload = null;
 
-  public MMSContent type(String type) {
+  public SendMmsRequestMMSContent type(String type) {
     this.type = type;
     return this;
   }
@@ -55,7 +55,7 @@ public class MMSContent {
     this.type = type;
   }
 
-  public MMSContent filename(String filename) {
+  public SendMmsRequestMMSContent filename(String filename) {
     this.filename = filename;
     return this;
   }
@@ -73,7 +73,7 @@ public class MMSContent {
     this.filename = filename;
   }
 
-  public MMSContent payload(String payload) {
+  public SendMmsRequestMMSContent payload(String payload) {
     this.payload = payload;
     return this;
   }
@@ -100,10 +100,10 @@ public class MMSContent {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MMSContent mmSContent = (MMSContent) o;
-    return Objects.equals(this.type, mmSContent.type) &&
-        Objects.equals(this.filename, mmSContent.filename) &&
-        Objects.equals(this.payload, mmSContent.payload);
+    SendMmsRequestMMSContent sendMmsRequestMMSContent = (SendMmsRequestMMSContent) o;
+    return Objects.equals(this.type, sendMmsRequestMMSContent.type) &&
+        Objects.equals(this.filename, sendMmsRequestMMSContent.filename) &&
+        Objects.equals(this.payload, sendMmsRequestMMSContent.payload);
   }
 
   @Override
@@ -115,7 +115,7 @@ public class MMSContent {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MMSContent {\n");
+    sb.append("class SendMmsRequestMMSContent {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");

@@ -126,11 +126,11 @@ public class MessagingApi {
      * Get MMS Status
      * Get MMS Status
      * @param messageid Unique identifier of a message - it is the value returned from a previous POST call to https://api.telstra.com/v2/messages/mms (required)
-     * @return OutboundPollResponse
+     * @return List&lt;OutboundPollResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OutboundPollResponse getMMSStatus(String messageid) throws ApiException {
-        ApiResponse<OutboundPollResponse> resp = getMMSStatusWithHttpInfo(messageid);
+    public List<OutboundPollResponse> getMMSStatus(String messageid) throws ApiException {
+        ApiResponse<List<OutboundPollResponse>> resp = getMMSStatusWithHttpInfo(messageid);
         return resp.getData();
     }
 
@@ -138,12 +138,12 @@ public class MessagingApi {
      * Get MMS Status
      * Get MMS Status
      * @param messageid Unique identifier of a message - it is the value returned from a previous POST call to https://api.telstra.com/v2/messages/mms (required)
-     * @return ApiResponse&lt;OutboundPollResponse&gt;
+     * @return ApiResponse&lt;List&lt;OutboundPollResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OutboundPollResponse> getMMSStatusWithHttpInfo(String messageid) throws ApiException {
+    public ApiResponse<List<OutboundPollResponse>> getMMSStatusWithHttpInfo(String messageid) throws ApiException {
         com.squareup.okhttp.Call call = getMMSStatusValidateBeforeCall(messageid, null, null);
-        Type localVarReturnType = new TypeToken<OutboundPollResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -155,7 +155,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getMMSStatusAsync(String messageid, final ApiCallback<OutboundPollResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getMMSStatusAsync(String messageid, final ApiCallback<List<OutboundPollResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +177,7 @@ public class MessagingApi {
         }
 
         com.squareup.okhttp.Call call = getMMSStatusValidateBeforeCall(messageid, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<OutboundPollResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -249,11 +249,11 @@ public class MessagingApi {
      * Get SMS Status
      * Get Message Status
      * @param messageId Unique identifier of a message - it is the value returned from a previous POST call to https://api.telstra.com/v2/messages/sms (required)
-     * @return OutboundPollResponse
+     * @return List&lt;OutboundPollResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public OutboundPollResponse getSMSStatus(String messageId) throws ApiException {
-        ApiResponse<OutboundPollResponse> resp = getSMSStatusWithHttpInfo(messageId);
+    public List<OutboundPollResponse> getSMSStatus(String messageId) throws ApiException {
+        ApiResponse<List<OutboundPollResponse>> resp = getSMSStatusWithHttpInfo(messageId);
         return resp.getData();
     }
 
@@ -261,12 +261,12 @@ public class MessagingApi {
      * Get SMS Status
      * Get Message Status
      * @param messageId Unique identifier of a message - it is the value returned from a previous POST call to https://api.telstra.com/v2/messages/sms (required)
-     * @return ApiResponse&lt;OutboundPollResponse&gt;
+     * @return ApiResponse&lt;List&lt;OutboundPollResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<OutboundPollResponse> getSMSStatusWithHttpInfo(String messageId) throws ApiException {
+    public ApiResponse<List<OutboundPollResponse>> getSMSStatusWithHttpInfo(String messageId) throws ApiException {
         com.squareup.okhttp.Call call = getSMSStatusValidateBeforeCall(messageId, null, null);
-        Type localVarReturnType = new TypeToken<OutboundPollResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -278,7 +278,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSMSStatusAsync(String messageId, final ApiCallback<OutboundPollResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSMSStatusAsync(String messageId, final ApiCallback<List<OutboundPollResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -300,7 +300,7 @@ public class MessagingApi {
         }
 
         com.squareup.okhttp.Call call = getSMSStatusValidateBeforeCall(messageId, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<OutboundPollResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -364,23 +364,23 @@ public class MessagingApi {
     /**
      * Retrieve SMS Responses
      * Retrieve Messages
-     * @return List&lt;InboundPollResponse&gt;
+     * @return InboundPollResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<InboundPollResponse> retrieveSMSResponses() throws ApiException {
-        ApiResponse<List<InboundPollResponse>> resp = retrieveSMSResponsesWithHttpInfo();
+    public InboundPollResponse retrieveSMSResponses() throws ApiException {
+        ApiResponse<InboundPollResponse> resp = retrieveSMSResponsesWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Retrieve SMS Responses
      * Retrieve Messages
-     * @return ApiResponse&lt;List&lt;InboundPollResponse&gt;&gt;
+     * @return ApiResponse&lt;InboundPollResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<InboundPollResponse>> retrieveSMSResponsesWithHttpInfo() throws ApiException {
+    public ApiResponse<InboundPollResponse> retrieveSMSResponsesWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = retrieveSMSResponsesValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<InboundPollResponse>>(){}.getType();
+        Type localVarReturnType = new TypeToken<InboundPollResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -391,7 +391,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call retrieveSMSResponsesAsync(final ApiCallback<List<InboundPollResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call retrieveSMSResponsesAsync(final ApiCallback<InboundPollResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -413,7 +413,7 @@ public class MessagingApi {
         }
 
         com.squareup.okhttp.Call call = retrieveSMSResponsesValidateBeforeCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<InboundPollResponse>>(){}.getType();
+        Type localVarReturnType = new TypeToken<InboundPollResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -484,11 +484,11 @@ public class MessagingApi {
      * Send MMS
      * Send MMS
      * @param body A JSON or XML payload containing the recipient&#39;s phone number and MMS message.The recipient number should be in the format &#39;04xxxxxxxx&#39; where x is a digit (required)
-     * @return Object
+     * @return MessageSentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object sendMMS(SendMmsRequest body) throws ApiException {
-        ApiResponse<Object> resp = sendMMSWithHttpInfo(body);
+    public MessageSentResponse sendMMS(SendMmsRequest body) throws ApiException {
+        ApiResponse<MessageSentResponse> resp = sendMMSWithHttpInfo(body);
         return resp.getData();
     }
 
@@ -496,12 +496,12 @@ public class MessagingApi {
      * Send MMS
      * Send MMS
      * @param body A JSON or XML payload containing the recipient&#39;s phone number and MMS message.The recipient number should be in the format &#39;04xxxxxxxx&#39; where x is a digit (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;MessageSentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> sendMMSWithHttpInfo(SendMmsRequest body) throws ApiException {
+    public ApiResponse<MessageSentResponse> sendMMSWithHttpInfo(SendMmsRequest body) throws ApiException {
         com.squareup.okhttp.Call call = sendMMSValidateBeforeCall(body, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<MessageSentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -513,7 +513,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendMMSAsync(SendMmsRequest body, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendMMSAsync(SendMmsRequest body, final ApiCallback<MessageSentResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -535,7 +535,7 @@ public class MessagingApi {
         }
 
         com.squareup.okhttp.Call call = sendMMSValidateBeforeCall(body, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<MessageSentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

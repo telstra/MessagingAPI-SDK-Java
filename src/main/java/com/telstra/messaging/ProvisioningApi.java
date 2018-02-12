@@ -27,6 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.telstra.messaging.DeleteNumberRequest;
+import com.telstra.messaging.GetSubscriptionResponse;
 import com.telstra.messaging.ProvisionNumberRequest;
 import com.telstra.messaging.ProvisionNumberResponse;
 
@@ -57,14 +59,13 @@ public class ProvisioningApi {
 
     /**
      * Build call for createSubscription
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
      * @param body A JSON payload containing the required attributes (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(String authorization, ProvisionNumberRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionCall(ProvisionNumberRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -74,8 +75,6 @@ public class ProvisioningApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -108,12 +107,7 @@ public class ProvisioningApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(String authorization, ProvisionNumberRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'authorization' is set
-        if (authorization == null) {
-            throw new ApiException("Missing the required parameter 'authorization' when calling createSubscription(Async)");
-        }
+    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(ProvisionNumberRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -121,7 +115,7 @@ public class ProvisioningApi {
         }
         
 
-        com.squareup.okhttp.Call call = createSubscriptionCall(authorization, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -129,26 +123,24 @@ public class ProvisioningApi {
     /**
      * Create Subscription
      * Provision a mobile number
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
      * @param body A JSON payload containing the required attributes (required)
      * @return ProvisionNumberResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ProvisionNumberResponse createSubscription(String authorization, ProvisionNumberRequest body) throws ApiException {
-        ApiResponse<ProvisionNumberResponse> resp = createSubscriptionWithHttpInfo(authorization, body);
+    public ProvisionNumberResponse createSubscription(ProvisionNumberRequest body) throws ApiException {
+        ApiResponse<ProvisionNumberResponse> resp = createSubscriptionWithHttpInfo(body);
         return resp.getData();
     }
 
     /**
      * Create Subscription
      * Provision a mobile number
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
      * @param body A JSON payload containing the required attributes (required)
      * @return ApiResponse&lt;ProvisionNumberResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ProvisionNumberResponse> createSubscriptionWithHttpInfo(String authorization, ProvisionNumberRequest body) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(authorization, body, null, null);
+    public ApiResponse<ProvisionNumberResponse> createSubscriptionWithHttpInfo(ProvisionNumberRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(body, null, null);
         Type localVarReturnType = new TypeToken<ProvisionNumberResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -156,13 +148,12 @@ public class ProvisioningApi {
     /**
      * Create Subscription (asynchronously)
      * Provision a mobile number
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
      * @param body A JSON payload containing the required attributes (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(String authorization, ProvisionNumberRequest body, final ApiCallback<ProvisionNumberResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createSubscriptionAsync(ProvisionNumberRequest body, final ApiCallback<ProvisionNumberResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -183,21 +174,21 @@ public class ProvisioningApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(authorization, body, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ProvisionNumberResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for deleteSubscription
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
+     * @param body EmptyArr (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
+    public com.squareup.okhttp.Call deleteSubscriptionCall(DeleteNumberRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = body;
 
         // create path and map variables
         String localVarPath = "/messages/provisioning/subscriptions";
@@ -206,8 +197,6 @@ public class ProvisioningApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -240,15 +229,15 @@ public class ProvisioningApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteSubscriptionValidateBeforeCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteSubscriptionValidateBeforeCall(DeleteNumberRequest body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'authorization' is set
-        if (authorization == null) {
-            throw new ApiException("Missing the required parameter 'authorization' when calling deleteSubscription(Async)");
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling deleteSubscription(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = deleteSubscriptionCall(authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteSubscriptionCall(body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -256,34 +245,34 @@ public class ProvisioningApi {
     /**
      * Delete Subscription
      * Delete a mobile number subscription from an account
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
+     * @param body EmptyArr (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteSubscription(String authorization) throws ApiException {
-        deleteSubscriptionWithHttpInfo(authorization);
+    public void deleteSubscription(DeleteNumberRequest body) throws ApiException {
+        deleteSubscriptionWithHttpInfo(body);
     }
 
     /**
      * Delete Subscription
      * Delete a mobile number subscription from an account
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
+     * @param body EmptyArr (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(authorization, null, null);
+    public ApiResponse<Void> deleteSubscriptionWithHttpInfo(DeleteNumberRequest body) throws ApiException {
+        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(body, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Delete Subscription (asynchronously)
      * Delete a mobile number subscription from an account
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
+     * @param body EmptyArr (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionAsync(String authorization, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteSubscriptionAsync(DeleteNumberRequest body, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -304,19 +293,18 @@ public class ProvisioningApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(body, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for getSubscription
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSubscriptionCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -326,8 +314,6 @@ public class ProvisioningApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -360,15 +346,10 @@ public class ProvisioningApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'authorization' is set
-        if (authorization == null) {
-            throw new ApiException("Missing the required parameter 'authorization' when calling getSubscription(Async)");
-        }
+    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getSubscriptionCall(authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSubscriptionCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -376,37 +357,34 @@ public class ProvisioningApi {
     /**
      * Get Subscription
      * Get mobile number subscription for an account
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
-     * @return List&lt;ProvisionNumberResponse&gt;
+     * @return GetSubscriptionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<ProvisionNumberResponse> getSubscription(String authorization) throws ApiException {
-        ApiResponse<List<ProvisionNumberResponse>> resp = getSubscriptionWithHttpInfo(authorization);
+    public GetSubscriptionResponse getSubscription() throws ApiException {
+        ApiResponse<GetSubscriptionResponse> resp = getSubscriptionWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * Get Subscription
      * Get mobile number subscription for an account
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
-     * @return ApiResponse&lt;List&lt;ProvisionNumberResponse&gt;&gt;
+     * @return ApiResponse&lt;GetSubscriptionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<ProvisionNumberResponse>> getSubscriptionWithHttpInfo(String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(authorization, null, null);
-        Type localVarReturnType = new TypeToken<List<ProvisionNumberResponse>>(){}.getType();
+    public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Get Subscription (asynchronously)
      * Get mobile number subscription for an account
-     * @param authorization An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionAsync(String authorization, final ApiCallback<List<ProvisionNumberResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSubscriptionAsync(final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -427,8 +405,8 @@ public class ProvisioningApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(authorization, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<ProvisionNumberResponse>>(){}.getType();
+        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

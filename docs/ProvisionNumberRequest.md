@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**activeDays** | **Integer** |  |  [optional]
-**notifyURL** | **String** |  |  [optional]
+**activeDays** | **Integer** | Number of active days |  [optional]
+**notifyURL** | **String** | Notify url |  [optional]
 
 
 

@@ -27,114 +27,96 @@ import java.io.IOException;
  * Poll for incoming messages returning the latest. Only works if no callback url was specified when provisioning a number.
  */
 @ApiModel(description = "Poll for incoming messages returning the latest. Only works if no callback url was specified when provisioning a number.")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-06T12:04:52.962+11:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
 public class InboundPollResponse {
-  @SerializedName("to")
-  private String to = null;
+  @SerializedName("status")
+  private String status = null;
 
-  @SerializedName("from")
-  private String from = null;
+  @SerializedName("destinationAddress")
+  private String destinationAddress = null;
 
-  @SerializedName("body")
-  private String body = null;
+  @SerializedName("senderAddress")
+  private String senderAddress = null;
 
-  @SerializedName("receivedTimestamp")
-  private String receivedTimestamp = null;
-
-  @SerializedName("moreMessages")
-  private Integer moreMessages = null;
+  @SerializedName("message")
+  private String message = null;
 
   @SerializedName("messageId")
   private String messageId = null;
 
-  public InboundPollResponse to(String to) {
-    this.to = to;
+  @SerializedName("sentTimestamp")
+  private String sentTimestamp = null;
+
+  public InboundPollResponse status(String status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * message status
+   * @return status
+  **/
+  @ApiModelProperty(value = "message status")
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public InboundPollResponse destinationAddress(String destinationAddress) {
+    this.destinationAddress = destinationAddress;
     return this;
   }
 
    /**
    * The phone number (recipient) that the message was sent to(in E.164 format).
-   * @return to
+   * @return destinationAddress
   **/
   @ApiModelProperty(value = "The phone number (recipient) that the message was sent to(in E.164 format).")
-  public String getTo() {
-    return to;
+  public String getDestinationAddress() {
+    return destinationAddress;
   }
 
-  public void setTo(String to) {
-    this.to = to;
+  public void setDestinationAddress(String destinationAddress) {
+    this.destinationAddress = destinationAddress;
   }
 
-  public InboundPollResponse from(String from) {
-    this.from = from;
+  public InboundPollResponse senderAddress(String senderAddress) {
+    this.senderAddress = senderAddress;
     return this;
   }
 
    /**
    * The phone number (sender) that the message was sent from (in E.164 format).
-   * @return from
+   * @return senderAddress
   **/
   @ApiModelProperty(value = "The phone number (sender) that the message was sent from (in E.164 format).")
-  public String getFrom() {
-    return from;
+  public String getSenderAddress() {
+    return senderAddress;
   }
 
-  public void setFrom(String from) {
-    this.from = from;
+  public void setSenderAddress(String senderAddress) {
+    this.senderAddress = senderAddress;
   }
 
-  public InboundPollResponse body(String body) {
-    this.body = body;
+  public InboundPollResponse message(String message) {
+    this.message = message;
     return this;
   }
 
    /**
-   * Text body of the message that was sent
-   * @return body
+   * Text of the message that was sent
+   * @return message
   **/
-  @ApiModelProperty(value = "Text body of the message that was sent")
-  public String getBody() {
-    return body;
+  @ApiModelProperty(value = "Text of the message that was sent")
+  public String getMessage() {
+    return message;
   }
 
-  public void setBody(String body) {
-    this.body = body;
-  }
-
-  public InboundPollResponse receivedTimestamp(String receivedTimestamp) {
-    this.receivedTimestamp = receivedTimestamp;
-    return this;
-  }
-
-   /**
-   * The date and time when the message was recieved by recipient.
-   * @return receivedTimestamp
-  **/
-  @ApiModelProperty(value = "The date and time when the message was recieved by recipient.")
-  public String getReceivedTimestamp() {
-    return receivedTimestamp;
-  }
-
-  public void setReceivedTimestamp(String receivedTimestamp) {
-    this.receivedTimestamp = receivedTimestamp;
-  }
-
-  public InboundPollResponse moreMessages(Integer moreMessages) {
-    this.moreMessages = moreMessages;
-    return this;
-  }
-
-   /**
-   * Indicates if there are more messages that can be polled from the server. 0&#x3D;No more messages available. Anything else indicates there are more messages on the server.
-   * @return moreMessages
-  **/
-  @ApiModelProperty(value = "Indicates if there are more messages that can be polled from the server. 0=No more messages available. Anything else indicates there are more messages on the server.")
-  public Integer getMoreMessages() {
-    return moreMessages;
-  }
-
-  public void setMoreMessages(Integer moreMessages) {
-    this.moreMessages = moreMessages;
+  public void setMessage(String message) {
+    this.message = message;
   }
 
   public InboundPollResponse messageId(String messageId) {
@@ -143,16 +125,34 @@ public class InboundPollResponse {
   }
 
    /**
-   * Optional message ID of the SMS you sent. Use this ID to view the message status or get responses.
+   * Message Id
    * @return messageId
   **/
-  @ApiModelProperty(value = "Optional message ID of the SMS you sent. Use this ID to view the message status or get responses.")
+  @ApiModelProperty(value = "Message Id")
   public String getMessageId() {
     return messageId;
   }
 
   public void setMessageId(String messageId) {
     this.messageId = messageId;
+  }
+
+  public InboundPollResponse sentTimestamp(String sentTimestamp) {
+    this.sentTimestamp = sentTimestamp;
+    return this;
+  }
+
+   /**
+   * The date and time when the message was sent by recipient.
+   * @return sentTimestamp
+  **/
+  @ApiModelProperty(value = "The date and time when the message was sent by recipient.")
+  public String getSentTimestamp() {
+    return sentTimestamp;
+  }
+
+  public void setSentTimestamp(String sentTimestamp) {
+    this.sentTimestamp = sentTimestamp;
   }
 
 
@@ -165,17 +165,17 @@ public class InboundPollResponse {
       return false;
     }
     InboundPollResponse inboundPollResponse = (InboundPollResponse) o;
-    return Objects.equals(this.to, inboundPollResponse.to) &&
-        Objects.equals(this.from, inboundPollResponse.from) &&
-        Objects.equals(this.body, inboundPollResponse.body) &&
-        Objects.equals(this.receivedTimestamp, inboundPollResponse.receivedTimestamp) &&
-        Objects.equals(this.moreMessages, inboundPollResponse.moreMessages) &&
-        Objects.equals(this.messageId, inboundPollResponse.messageId);
+    return Objects.equals(this.status, inboundPollResponse.status) &&
+        Objects.equals(this.destinationAddress, inboundPollResponse.destinationAddress) &&
+        Objects.equals(this.senderAddress, inboundPollResponse.senderAddress) &&
+        Objects.equals(this.message, inboundPollResponse.message) &&
+        Objects.equals(this.messageId, inboundPollResponse.messageId) &&
+        Objects.equals(this.sentTimestamp, inboundPollResponse.sentTimestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(to, from, body, receivedTimestamp, moreMessages, messageId);
+    return Objects.hash(status, destinationAddress, senderAddress, message, messageId, sentTimestamp);
   }
 
 
@@ -184,12 +184,12 @@ public class InboundPollResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class InboundPollResponse {\n");
     
-    sb.append("    to: ").append(toIndentedString(to)).append("\n");
-    sb.append("    from: ").append(toIndentedString(from)).append("\n");
-    sb.append("    body: ").append(toIndentedString(body)).append("\n");
-    sb.append("    receivedTimestamp: ").append(toIndentedString(receivedTimestamp)).append("\n");
-    sb.append("    moreMessages: ").append(toIndentedString(moreMessages)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    destinationAddress: ").append(toIndentedString(destinationAddress)).append("\n");
+    sb.append("    senderAddress: ").append(toIndentedString(senderAddress)).append("\n");
+    sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
+    sb.append("    sentTimestamp: ").append(toIndentedString(sentTimestamp)).append("\n");
     sb.append("}");
     return sb.toString();
   }

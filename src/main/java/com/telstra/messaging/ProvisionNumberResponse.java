@@ -26,52 +26,10 @@ import java.io.IOException;
 /**
  * ProvisionNumberResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-06T12:04:52.962+11:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
 public class ProvisionNumberResponse {
-  @SerializedName("activeDays")
-  private Integer activeDays = null;
-
-  @SerializedName("notifyURL")
-  private String notifyURL = null;
-
   @SerializedName("destinationAddress")
   private String destinationAddress = null;
-
-  public ProvisionNumberResponse activeDays(Integer activeDays) {
-    this.activeDays = activeDays;
-    return this;
-  }
-
-   /**
-   * 
-   * @return activeDays
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Integer getActiveDays() {
-    return activeDays;
-  }
-
-  public void setActiveDays(Integer activeDays) {
-    this.activeDays = activeDays;
-  }
-
-  public ProvisionNumberResponse notifyURL(String notifyURL) {
-    this.notifyURL = notifyURL;
-    return this;
-  }
-
-   /**
-   * 
-   * @return notifyURL
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNotifyURL() {
-    return notifyURL;
-  }
-
-  public void setNotifyURL(String notifyURL) {
-    this.notifyURL = notifyURL;
-  }
 
   public ProvisionNumberResponse destinationAddress(String destinationAddress) {
     this.destinationAddress = destinationAddress;
@@ -82,7 +40,7 @@ public class ProvisionNumberResponse {
    * The mobile phone number that was allocated
    * @return destinationAddress
   **/
-  @ApiModelProperty(required = true, value = "The mobile phone number that was allocated")
+  @ApiModelProperty(value = "The mobile phone number that was allocated")
   public String getDestinationAddress() {
     return destinationAddress;
   }
@@ -101,14 +59,12 @@ public class ProvisionNumberResponse {
       return false;
     }
     ProvisionNumberResponse provisionNumberResponse = (ProvisionNumberResponse) o;
-    return Objects.equals(this.activeDays, provisionNumberResponse.activeDays) &&
-        Objects.equals(this.notifyURL, provisionNumberResponse.notifyURL) &&
-        Objects.equals(this.destinationAddress, provisionNumberResponse.destinationAddress);
+    return Objects.equals(this.destinationAddress, provisionNumberResponse.destinationAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activeDays, notifyURL, destinationAddress);
+    return Objects.hash(destinationAddress);
   }
 
 
@@ -117,8 +73,6 @@ public class ProvisionNumberResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class ProvisionNumberResponse {\n");
     
-    sb.append("    activeDays: ").append(toIndentedString(activeDays)).append("\n");
-    sb.append("    notifyURL: ").append(toIndentedString(notifyURL)).append("\n");
     sb.append("    destinationAddress: ").append(toIndentedString(destinationAddress)).append("\n");
     sb.append("}");
     return sb.toString();

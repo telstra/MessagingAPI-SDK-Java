@@ -24,36 +24,35 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Returns error status code and message
+ * ErrorErrorError62
  */
-@ApiModel(description = "Returns error status code and message")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
-public class ErrorErrorError {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-08T22:00:21.379+11:00")
+public class ErrorErrorError62 {
   @SerializedName("status")
-  private Integer status = null;
+  private String status = null;
 
   @SerializedName("message")
   private String message = null;
 
-  public ErrorErrorError status(Integer status) {
+  public ErrorErrorError62 status(String status) {
     this.status = status;
     return this;
   }
 
    /**
-   * The status code.
+   * A short error code
    * @return status
   **/
-  @ApiModelProperty(value = "The status code.")
-  public Integer getStatus() {
+  @ApiModelProperty(required = true, value = "A short error code")
+  public String getStatus() {
     return status;
   }
 
-  public void setStatus(Integer status) {
+  public void setStatus(String status) {
     this.status = status;
   }
 
-  public ErrorErrorError message(String message) {
+  public ErrorErrorError62 message(String message) {
     this.message = message;
     return this;
   }
@@ -80,9 +79,9 @@ public class ErrorErrorError {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorErrorError errorErrorError = (ErrorErrorError) o;
-    return Objects.equals(this.status, errorErrorError.status) &&
-        Objects.equals(this.message, errorErrorError.message);
+    ErrorErrorError62 errorErrorError62 = (ErrorErrorError62) o;
+    return Objects.equals(this.status, errorErrorError62.status) &&
+        Objects.equals(this.message, errorErrorError62.message);
   }
 
   @Override
@@ -94,7 +93,7 @@ public class ErrorErrorError {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorErrorError {\n");
+    sb.append("class ErrorErrorError62 {\n");
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");

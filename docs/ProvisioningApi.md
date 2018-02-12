@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> ProvisionNumberResponse createSubscription(authorization, body)
+> ProvisionNumberResponse createSubscription(body)
 
 Create Subscription
 
@@ -33,10 +33,9 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvisioningApi apiInstance = new ProvisioningApi();
-String authorization = "authorization_example"; // String | An OAUTH bearer token that is entitled to use the 'SUBSCRIPTION' scope.
 ProvisionNumberRequest body = new ProvisionNumberRequest(); // ProvisionNumberRequest | A JSON payload containing the required attributes
 try {
-    ProvisionNumberResponse result = apiInstance.createSubscription(authorization, body);
+    ProvisionNumberResponse result = apiInstance.createSubscription(body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvisioningApi#createSubscription");
@@ -48,7 +47,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. |
  **body** | [**ProvisionNumberRequest**](ProvisionNumberRequest.md)| A JSON payload containing the required attributes |
 
 ### Return type
@@ -66,7 +64,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteSubscription"></a>
 # **deleteSubscription**
-> deleteSubscription(authorization)
+> deleteSubscription(body)
 
 Delete Subscription
 
@@ -88,9 +86,9 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvisioningApi apiInstance = new ProvisioningApi();
-String authorization = "authorization_example"; // String | An OAUTH bearer token that is entitled to use the 'SUBSCRIPTION' scope.
+DeleteNumberRequest body = new DeleteNumberRequest(); // DeleteNumberRequest | EmptyArr
 try {
-    apiInstance.deleteSubscription(authorization);
+    apiInstance.deleteSubscription(body);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvisioningApi#deleteSubscription");
     e.printStackTrace();
@@ -101,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. |
+ **body** | [**DeleteNumberRequest**](DeleteNumberRequest.md)| EmptyArr |
 
 ### Return type
 
@@ -118,7 +116,7 @@ null (empty response body)
 
 <a name="getSubscription"></a>
 # **getSubscription**
-> List&lt;ProvisionNumberResponse&gt; getSubscription(authorization)
+> GetSubscriptionResponse getSubscription()
 
 Get Subscription
 
@@ -140,9 +138,8 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvisioningApi apiInstance = new ProvisioningApi();
-String authorization = "authorization_example"; // String | An OAUTH bearer token that is entitled to use the 'SUBSCRIPTION' scope.
 try {
-    List<ProvisionNumberResponse> result = apiInstance.getSubscription(authorization);
+    GetSubscriptionResponse result = apiInstance.getSubscription();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvisioningApi#getSubscription");
@@ -151,14 +148,11 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **String**| An OAUTH bearer token that is entitled to use the &#39;SUBSCRIPTION&#39; scope. |
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;ProvisionNumberResponse&gt;**](ProvisionNumberResponse.md)
+[**GetSubscriptionResponse**](GetSubscriptionResponse.md)
 
 ### Authorization
 

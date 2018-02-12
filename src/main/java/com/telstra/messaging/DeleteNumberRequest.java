@@ -24,51 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Returns error status code and message
+ * DeleteNumberRequest
  */
-@ApiModel(description = "Returns error status code and message")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-12T11:05:07.187+11:00")
-public class ErrorErrorError {
-  @SerializedName("status")
-  private Integer status = null;
+public class DeleteNumberRequest {
+  @SerializedName("emptyArr")
+  private Integer emptyArr = 0;
 
-  @SerializedName("message")
-  private String message = null;
-
-  public ErrorErrorError status(Integer status) {
-    this.status = status;
+  public DeleteNumberRequest emptyArr(Integer emptyArr) {
+    this.emptyArr = emptyArr;
     return this;
   }
 
    /**
-   * The status code.
-   * @return status
+   * Empty Arr
+   * @return emptyArr
   **/
-  @ApiModelProperty(value = "The status code.")
-  public Integer getStatus() {
-    return status;
+  @ApiModelProperty(value = "Empty Arr")
+  public Integer getEmptyArr() {
+    return emptyArr;
   }
 
-  public void setStatus(Integer status) {
-    this.status = status;
-  }
-
-  public ErrorErrorError message(String message) {
-    this.message = message;
-    return this;
-  }
-
-   /**
-   * Message describing the error.
-   * @return message
-  **/
-  @ApiModelProperty(value = "Message describing the error.")
-  public String getMessage() {
-    return message;
-  }
-
-  public void setMessage(String message) {
-    this.message = message;
+  public void setEmptyArr(Integer emptyArr) {
+    this.emptyArr = emptyArr;
   }
 
 
@@ -80,24 +58,22 @@ public class ErrorErrorError {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorErrorError errorErrorError = (ErrorErrorError) o;
-    return Objects.equals(this.status, errorErrorError.status) &&
-        Objects.equals(this.message, errorErrorError.message);
+    DeleteNumberRequest deleteNumberRequest = (DeleteNumberRequest) o;
+    return Objects.equals(this.emptyArr, deleteNumberRequest.emptyArr);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, message);
+    return Objects.hash(emptyArr);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorErrorError {\n");
+    sb.append("class DeleteNumberRequest {\n");
     
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    emptyArr: ").append(toIndentedString(emptyArr)).append("\n");
     sb.append("}");
     return sb.toString();
   }
