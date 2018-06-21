@@ -4,16 +4,16 @@ All URIs are relative to *https://tapi.telstra.com/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authToken**](AuthenticationApi.md#authToken) | **POST** /oauth/token | Generate authentication token
+[**authToken**](AuthenticationApi.md#authToken) | **POST** /oauth/token | Generate OAuth2 token
 
 
 <a name="authToken"></a>
 # **authToken**
 > OAuthResponse authToken(clientId, clientSecret, grantType)
 
-Generate authentication token
+Generate OAuth2 token
 
-Generate authentication token
+To generate an OAuth2 Authentication token, pass through your &#x60;Client key&#x60; and &#x60;Client secret&#x60; that you received when you registered for the **API Free Trial** Product. The grant_type should be left as &#x60;client_credentials&#x60; and the scope as &#x60;NSMS&#x60;. The token will expire in one hour. 
 
 ### Example
 ```java
@@ -23,9 +23,9 @@ Generate authentication token
 
 
 AuthenticationApi apiInstance = new AuthenticationApi();
-String clientId = "clientId_example"; // String | 
-String clientSecret = "clientSecret_example"; // String | 
-String grantType = "client_credentials"; // String | 
+String clientId = "null"; // String | 
+String clientSecret = "null"; // String | 
+String grantType = "\"client_credentials\""; // String | 
 try {
     OAuthResponse result = apiInstance.authToken(clientId, clientSecret, grantType);
     System.out.println(result);
@@ -39,9 +39,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **String**|  |
- **clientSecret** | **String**|  |
- **grantType** | **String**|  | [default to client_credentials]
+ **clientId** | **String**|  | [default to null]
+ **clientSecret** | **String**|  | [default to null]
+ **grantType** | **String**|  | [default to &quot;client_credentials&quot;]
 
 ### Return type
 

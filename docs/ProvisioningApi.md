@@ -11,11 +11,11 @@ Method | HTTP request | Description
 
 <a name="createSubscription"></a>
 # **createSubscription**
-> ProvisionNumberResponse createSubscription(body)
+> ProvisionNumberResponse createSubscription(provisionNumberRequest)
 
 Create Subscription
 
-Provision a mobile number
+Invoke the provisioning API to get a dedicated mobile number for an account or application. 
 
 ### Example
 ```java
@@ -33,9 +33,9 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvisioningApi apiInstance = new ProvisioningApi();
-ProvisionNumberRequest body = new ProvisionNumberRequest(); // ProvisionNumberRequest | A JSON payload containing the required attributes
+ProvisionNumberRequest provisionNumberRequest = new ProvisionNumberRequest(); // ProvisionNumberRequest | A JSON payload containing the required attributes
 try {
-    ProvisionNumberResponse result = apiInstance.createSubscription(body);
+    ProvisionNumberResponse result = apiInstance.createSubscription(provisionNumberRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvisioningApi#createSubscription");
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProvisionNumberRequest**](ProvisionNumberRequest.md)| A JSON payload containing the required attributes |
+ **provisionNumberRequest** | [**ProvisionNumberRequest**](ProvisionNumberRequest.md)| A JSON payload containing the required attributes |
 
 ### Return type
 
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
 
 <a name="deleteSubscription"></a>
 # **deleteSubscription**
-> deleteSubscription(body)
+> deleteSubscription(deleteNumberRequest)
 
 Delete Subscription
 
-Delete a mobile number subscription from an account
+Delete a mobile number subscription from an account 
 
 ### Example
 ```java
@@ -86,9 +86,9 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 ProvisioningApi apiInstance = new ProvisioningApi();
-DeleteNumberRequest body = new DeleteNumberRequest(); // DeleteNumberRequest | EmptyArr
+DeleteNumberRequest deleteNumberRequest = new DeleteNumberRequest(); // DeleteNumberRequest | EmptyArr
 try {
-    apiInstance.deleteSubscription(body);
+    apiInstance.deleteSubscription(deleteNumberRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling ProvisioningApi#deleteSubscription");
     e.printStackTrace();
@@ -99,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteNumberRequest**](DeleteNumberRequest.md)| EmptyArr |
+ **deleteNumberRequest** | [**DeleteNumberRequest**](DeleteNumberRequest.md)| EmptyArr |
 
 ### Return type
 
@@ -112,7 +112,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 <a name="getSubscription"></a>
 # **getSubscription**
@@ -120,7 +120,7 @@ null (empty response body)
 
 Get Subscription
 
-Get mobile number subscription for an account
+Get mobile number subscription for an account 
 
 ### Example
 ```java
@@ -160,6 +160,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
