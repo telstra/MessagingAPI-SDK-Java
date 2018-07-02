@@ -240,8 +240,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
-SendMmsRequest sendMmsRequest = new SendMmsRequest(); // SendMmsRequest | A JSON or XML payload containing the recipient's phone number and MMS message.
-The recipient number should be in the format '04xxxxxxxx' where x is a digit.
+SendMmsRequest sendMmsRequest = new SendMmsRequest(); // SendMmsRequest | A JSON or XML payload containing the recipient's phone number and MMS message. The recipient number should be in the format '04xxxxxxxx' where x is a digit.
 
 try {
     MessageSentResponse result = apiInstance.sendMMS(sendMmsRequest);
@@ -256,8 +255,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendMmsRequest** | [**SendMmsRequest**](SendMmsRequest.md)| A JSON or XML payload containing the recipient&#39;s phone number and MMS message.
-The recipient number should be in the format &#39;04xxxxxxxx&#39; where x is a digit.
+ **sendMmsRequest** | [**SendMmsRequest**](SendMmsRequest.md)| A JSON or XML payload containing the recipient&#39;s phone number and MMS message. The recipient number should be in the format &#39;04xxxxxxxx&#39; where x is a digit.
  |
 
 ### Return type
@@ -297,8 +295,7 @@ OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
 auth.setAccessToken("YOUR ACCESS TOKEN");
 
 MessagingApi apiInstance = new MessagingApi();
-SendSMSRequest sendSMSRequest = new SendSMSRequest(); // SendSMSRequest | A JSON or XML payload containing the recipient's phone number and text message.
-This number can be in international format if preceeded by a â€˜+â€™ or in national format ('04xxxxxxxx') where x is a digit.
+SendSMSRequest sendSMSRequest = new SendSMSRequest(); // SendSMSRequest | A JSON or XML payload containing the recipient's phone number and text message. This number can be in international format if preceeded by a '+' or in national format ('04xxxxxxxx') where x is a digit.
 
 try {
     MessageSentResponse result = apiInstance.sendSMS(sendSMSRequest);
@@ -313,8 +310,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendSMSRequest** | [**SendSMSRequest**](SendSMSRequest.md)| A JSON or XML payload containing the recipient&#39;s phone number and text message.
-This number can be in international format if preceeded by a â€˜+â€™ or in national format (&#39;04xxxxxxxx&#39;) where x is a digit.
+ **sendSMSRequest** | [**SendSMSRequest**](SendSMSRequest.md)| A JSON or XML payload containing the recipient&#39;s phone number and text message. This number can be in international format if preceeded by a &#39;+&#39; or in national format (&#39;04xxxxxxxx&#39;) where x is a digit.
  |
 
 ### Return type
