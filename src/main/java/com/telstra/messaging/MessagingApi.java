@@ -13,6 +13,14 @@
 
 package com.telstra.messaging;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
 import com.telstra.ApiCallback;
 import com.telstra.ApiClient;
 import com.telstra.ApiException;
@@ -21,24 +29,6 @@ import com.telstra.Configuration;
 import com.telstra.Pair;
 import com.telstra.ProgressRequestBody;
 import com.telstra.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import com.telstra.messaging.InboundPollResponse;
-import com.telstra.messaging.MMSContent;
-import com.telstra.messaging.MessageSentResponse;
-import com.telstra.messaging.OutboundPollResponse;
-import com.telstra.messaging.SendMmsRequest;
-import com.telstra.messaging.SendSMSRequest;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class MessagingApi {
     private ApiClient apiClient;
@@ -67,7 +57,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getMMSStatusCall(String messageid, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getMMSStatusCall(String messageid, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -94,10 +84,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -109,8 +99,7 @@ public class MessagingApi {
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getMMSStatusValidateBeforeCall(String messageid, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getMMSStatusValidateBeforeCall(String messageid, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'messageid' is set
         if (messageid == null) {
@@ -118,7 +107,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getMMSStatusCall(messageid, progressListener, progressRequestListener);
+        okhttp3.Call call = getMMSStatusCall(messageid, progressListener, progressRequestListener);
         return call;
 
     }
@@ -143,7 +132,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<List<OutboundPollResponse>> getMMSStatusWithHttpInfo(String messageid) throws ApiException {
-        com.squareup.okhttp.Call call = getMMSStatusValidateBeforeCall(messageid, null, null);
+        okhttp3.Call call = getMMSStatusValidateBeforeCall(messageid, null, null);
         Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -156,7 +145,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getMMSStatusAsync(String messageid, final ApiCallback<List<OutboundPollResponse>> callback) throws ApiException {
+    public okhttp3.Call getMMSStatusAsync(String messageid, final ApiCallback<List<OutboundPollResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +166,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getMMSStatusValidateBeforeCall(messageid, progressListener, progressRequestListener);
+        okhttp3.Call call = getMMSStatusValidateBeforeCall(messageid, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -190,7 +179,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSMSStatusCall(String messageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSMSStatusCall(String messageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -217,10 +206,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -232,8 +221,7 @@ public class MessagingApi {
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSMSStatusValidateBeforeCall(String messageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSMSStatusValidateBeforeCall(String messageId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'messageId' is set
         if (messageId == null) {
@@ -241,7 +229,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getSMSStatusCall(messageId, progressListener, progressRequestListener);
+        okhttp3.Call call = getSMSStatusCall(messageId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -266,7 +254,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<List<OutboundPollResponse>> getSMSStatusWithHttpInfo(String messageId) throws ApiException {
-        com.squareup.okhttp.Call call = getSMSStatusValidateBeforeCall(messageId, null, null);
+        okhttp3.Call call = getSMSStatusValidateBeforeCall(messageId, null, null);
         Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -279,7 +267,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSMSStatusAsync(String messageId, final ApiCallback<List<OutboundPollResponse>> callback) throws ApiException {
+    public okhttp3.Call getSMSStatusAsync(String messageId, final ApiCallback<List<OutboundPollResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -300,7 +288,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSMSStatusValidateBeforeCall(messageId, progressListener, progressRequestListener);
+        okhttp3.Call call = getSMSStatusValidateBeforeCall(messageId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<OutboundPollResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -312,7 +300,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call retrieveMMSResponsesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call retrieveMMSResponsesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -338,10 +326,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -353,11 +341,10 @@ public class MessagingApi {
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call retrieveMMSResponsesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call retrieveMMSResponsesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = retrieveMMSResponsesCall(progressListener, progressRequestListener);
+        okhttp3.Call call = retrieveMMSResponsesCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -380,7 +367,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<List<MMSContent>> retrieveMMSResponsesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = retrieveMMSResponsesValidateBeforeCall(null, null);
+        okhttp3.Call call = retrieveMMSResponsesValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<List<MMSContent>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -392,7 +379,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call retrieveMMSResponsesAsync(final ApiCallback<List<MMSContent>> callback) throws ApiException {
+    public okhttp3.Call retrieveMMSResponsesAsync(final ApiCallback<List<MMSContent>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -413,7 +400,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = retrieveMMSResponsesValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = retrieveMMSResponsesValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MMSContent>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -425,7 +412,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call retrieveSMSResponsesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call retrieveSMSResponsesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -451,10 +438,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -466,11 +453,10 @@ public class MessagingApi {
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call retrieveSMSResponsesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call retrieveSMSResponsesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = retrieveSMSResponsesCall(progressListener, progressRequestListener);
+        okhttp3.Call call = retrieveSMSResponsesCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -493,7 +479,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<InboundPollResponse> retrieveSMSResponsesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = retrieveSMSResponsesValidateBeforeCall(null, null);
+        okhttp3.Call call = retrieveSMSResponsesValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<InboundPollResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -505,7 +491,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call retrieveSMSResponsesAsync(final ApiCallback<InboundPollResponse> callback) throws ApiException {
+    public okhttp3.Call retrieveSMSResponsesAsync(final ApiCallback<InboundPollResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -526,7 +512,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = retrieveSMSResponsesValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = retrieveSMSResponsesValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InboundPollResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -540,7 +526,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call sendMMSCall(SendMmsRequest sendMmsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call sendMMSCall(SendMmsRequest sendMmsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = sendMmsRequest;
 
         // create path and map variables
@@ -566,10 +552,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -581,8 +567,7 @@ public class MessagingApi {
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call sendMMSValidateBeforeCall(SendMmsRequest sendMmsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call sendMMSValidateBeforeCall(SendMmsRequest sendMmsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sendMmsRequest' is set
         if (sendMmsRequest == null) {
@@ -590,7 +575,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = sendMMSCall(sendMmsRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = sendMMSCall(sendMmsRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -617,7 +602,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<MessageSentResponse> sendMMSWithHttpInfo(SendMmsRequest sendMmsRequest) throws ApiException {
-        com.squareup.okhttp.Call call = sendMMSValidateBeforeCall(sendMmsRequest, null, null);
+        okhttp3.Call call = sendMMSValidateBeforeCall(sendMmsRequest, null, null);
         Type localVarReturnType = new TypeToken<MessageSentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -631,7 +616,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendMMSAsync(SendMmsRequest sendMmsRequest, final ApiCallback<MessageSentResponse> callback) throws ApiException {
+    public okhttp3.Call sendMMSAsync(SendMmsRequest sendMmsRequest, final ApiCallback<MessageSentResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -652,7 +637,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = sendMMSValidateBeforeCall(sendMmsRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = sendMMSValidateBeforeCall(sendMmsRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<MessageSentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -666,7 +651,7 @@ public class MessagingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call sendSMSCall(SendSMSRequest sendSMSRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call sendSMSCall(SendSMSRequest sendSMSRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = sendSMSRequest;
 
         // create path and map variables
@@ -692,10 +677,10 @@ public class MessagingApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -707,8 +692,7 @@ public class MessagingApi {
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call sendSMSValidateBeforeCall(SendSMSRequest sendSMSRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call sendSMSValidateBeforeCall(SendSMSRequest sendSMSRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'sendSMSRequest' is set
         if (sendSMSRequest == null) {
@@ -716,7 +700,7 @@ public class MessagingApi {
         }
         
 
-        com.squareup.okhttp.Call call = sendSMSCall(sendSMSRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = sendSMSCall(sendSMSRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -743,7 +727,7 @@ public class MessagingApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<MessageSentResponse> sendSMSWithHttpInfo(SendSMSRequest sendSMSRequest) throws ApiException {
-        com.squareup.okhttp.Call call = sendSMSValidateBeforeCall(sendSMSRequest, null, null);
+        okhttp3.Call call = sendSMSValidateBeforeCall(sendSMSRequest, null, null);
         Type localVarReturnType = new TypeToken<MessageSentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -757,7 +741,7 @@ public class MessagingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendSMSAsync(SendSMSRequest sendSMSRequest, final ApiCallback<MessageSentResponse> callback) throws ApiException {
+    public okhttp3.Call sendSMSAsync(SendSMSRequest sendSMSRequest, final ApiCallback<MessageSentResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -778,7 +762,7 @@ public class MessagingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = sendSMSValidateBeforeCall(sendSMSRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = sendSMSValidateBeforeCall(sendSMSRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<MessageSentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
