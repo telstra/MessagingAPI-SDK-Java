@@ -13,6 +13,14 @@
 
 package com.telstra.messaging;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
 import com.telstra.ApiCallback;
 import com.telstra.ApiClient;
 import com.telstra.ApiException;
@@ -21,19 +29,6 @@ import com.telstra.Configuration;
 import com.telstra.Pair;
 import com.telstra.ProgressRequestBody;
 import com.telstra.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import com.telstra.messaging.OAuthResponse;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class AuthenticationApi {
     private ApiClient apiClient;
@@ -64,7 +59,7 @@ public class AuthenticationApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call authTokenCall(String clientId, String clientSecret, String grantType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call authTokenCall(String clientId, String clientSecret, String grantType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -96,10 +91,10 @@ public class AuthenticationApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -111,8 +106,7 @@ public class AuthenticationApi {
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call authTokenValidateBeforeCall(String clientId, String clientSecret, String grantType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call authTokenValidateBeforeCall(String clientId, String clientSecret, String grantType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'clientId' is set
         if (clientId == null) {
@@ -130,7 +124,7 @@ public class AuthenticationApi {
         }
         
 
-        com.squareup.okhttp.Call call = authTokenCall(clientId, clientSecret, grantType, progressListener, progressRequestListener);
+        okhttp3.Call call = authTokenCall(clientId, clientSecret, grantType, progressListener, progressRequestListener);
         return call;
 
     }
@@ -159,7 +153,7 @@ public class AuthenticationApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<OAuthResponse> authTokenWithHttpInfo(String clientId, String clientSecret, String grantType) throws ApiException {
-        com.squareup.okhttp.Call call = authTokenValidateBeforeCall(clientId, clientSecret, grantType, null, null);
+        okhttp3.Call call = authTokenValidateBeforeCall(clientId, clientSecret, grantType, null, null);
         Type localVarReturnType = new TypeToken<OAuthResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -174,7 +168,7 @@ public class AuthenticationApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call authTokenAsync(String clientId, String clientSecret, String grantType, final ApiCallback<OAuthResponse> callback) throws ApiException {
+    public okhttp3.Call authTokenAsync(String clientId, String clientSecret, String grantType, final ApiCallback<OAuthResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -195,7 +189,7 @@ public class AuthenticationApi {
             };
         }
 
-        com.squareup.okhttp.Call call = authTokenValidateBeforeCall(clientId, clientSecret, grantType, progressListener, progressRequestListener);
+        okhttp3.Call call = authTokenValidateBeforeCall(clientId, clientSecret, grantType, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OAuthResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

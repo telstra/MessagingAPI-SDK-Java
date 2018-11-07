@@ -13,6 +13,14 @@
 
 package com.telstra.messaging;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.google.gson.reflect.TypeToken;
 import com.telstra.ApiCallback;
 import com.telstra.ApiClient;
 import com.telstra.ApiException;
@@ -21,22 +29,6 @@ import com.telstra.Configuration;
 import com.telstra.Pair;
 import com.telstra.ProgressRequestBody;
 import com.telstra.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
-import com.telstra.messaging.DeleteNumberRequest;
-import com.telstra.messaging.GetSubscriptionResponse;
-import com.telstra.messaging.ProvisionNumberRequest;
-import com.telstra.messaging.ProvisionNumberResponse;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ProvisioningApi {
     private ApiClient apiClient;
@@ -65,7 +57,7 @@ public class ProvisioningApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionCall(ProvisionNumberRequest provisionNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call createSubscriptionCall(ProvisionNumberRequest provisionNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = provisionNumberRequest;
 
         // create path and map variables
@@ -91,10 +83,10 @@ public class ProvisioningApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -106,8 +98,7 @@ public class ProvisioningApi {
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createSubscriptionValidateBeforeCall(ProvisionNumberRequest provisionNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call createSubscriptionValidateBeforeCall(ProvisionNumberRequest provisionNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'provisionNumberRequest' is set
         if (provisionNumberRequest == null) {
@@ -115,7 +106,7 @@ public class ProvisioningApi {
         }
         
 
-        com.squareup.okhttp.Call call = createSubscriptionCall(provisionNumberRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createSubscriptionCall(provisionNumberRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -140,7 +131,7 @@ public class ProvisioningApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ProvisionNumberResponse> createSubscriptionWithHttpInfo(ProvisionNumberRequest provisionNumberRequest) throws ApiException {
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(provisionNumberRequest, null, null);
+        okhttp3.Call call = createSubscriptionValidateBeforeCall(provisionNumberRequest, null, null);
         Type localVarReturnType = new TypeToken<ProvisionNumberResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -153,7 +144,7 @@ public class ProvisioningApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createSubscriptionAsync(ProvisionNumberRequest provisionNumberRequest, final ApiCallback<ProvisionNumberResponse> callback) throws ApiException {
+    public okhttp3.Call createSubscriptionAsync(ProvisionNumberRequest provisionNumberRequest, final ApiCallback<ProvisionNumberResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -174,7 +165,7 @@ public class ProvisioningApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createSubscriptionValidateBeforeCall(provisionNumberRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = createSubscriptionValidateBeforeCall(provisionNumberRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ProvisionNumberResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -187,7 +178,7 @@ public class ProvisioningApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionCall(DeleteNumberRequest deleteNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call deleteSubscriptionCall(DeleteNumberRequest deleteNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = deleteNumberRequest;
 
         // create path and map variables
@@ -213,10 +204,10 @@ public class ProvisioningApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -228,8 +219,7 @@ public class ProvisioningApi {
         return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteSubscriptionValidateBeforeCall(DeleteNumberRequest deleteNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call deleteSubscriptionValidateBeforeCall(DeleteNumberRequest deleteNumberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'deleteNumberRequest' is set
         if (deleteNumberRequest == null) {
@@ -237,7 +227,7 @@ public class ProvisioningApi {
         }
         
 
-        com.squareup.okhttp.Call call = deleteSubscriptionCall(deleteNumberRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionCall(deleteNumberRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -260,7 +250,7 @@ public class ProvisioningApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<Void> deleteSubscriptionWithHttpInfo(DeleteNumberRequest deleteNumberRequest) throws ApiException {
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(deleteNumberRequest, null, null);
+        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(deleteNumberRequest, null, null);
         return apiClient.execute(call);
     }
 
@@ -272,7 +262,7 @@ public class ProvisioningApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteSubscriptionAsync(DeleteNumberRequest deleteNumberRequest, final ApiCallback<Void> callback) throws ApiException {
+    public okhttp3.Call deleteSubscriptionAsync(DeleteNumberRequest deleteNumberRequest, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -293,7 +283,7 @@ public class ProvisioningApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteSubscriptionValidateBeforeCall(deleteNumberRequest, progressListener, progressRequestListener);
+        okhttp3.Call call = deleteSubscriptionValidateBeforeCall(deleteNumberRequest, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -304,7 +294,7 @@ public class ProvisioningApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public okhttp3.Call getSubscriptionCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -330,10 +320,10 @@ public class ProvisioningApi {
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+            apiClient.getHttpClient().networkInterceptors().add(new okhttp3.Interceptor() {
                 @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                public okhttp3.Response intercept(okhttp3.Interceptor.Chain chain) throws IOException {
+                    okhttp3.Response originalResponse = chain.proceed(chain.request());
                     return originalResponse.newBuilder()
                     .body(new ProgressResponseBody(originalResponse.body(), progressListener))
                     .build();
@@ -345,11 +335,10 @@ public class ProvisioningApi {
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSubscriptionValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private okhttp3.Call getSubscriptionValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getSubscriptionCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionCall(progressListener, progressRequestListener);
         return call;
 
     }
@@ -372,7 +361,7 @@ public class ProvisioningApi {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<GetSubscriptionResponse> getSubscriptionWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(null, null);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -384,7 +373,7 @@ public class ProvisioningApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSubscriptionAsync(final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
+    public okhttp3.Call getSubscriptionAsync(final ApiCallback<GetSubscriptionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -405,7 +394,7 @@ public class ProvisioningApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSubscriptionValidateBeforeCall(progressListener, progressRequestListener);
+        okhttp3.Call call = getSubscriptionValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GetSubscriptionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
