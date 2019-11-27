@@ -1,7 +1,9 @@
 
+
 # GetSubscriptionResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **activeDays** | **String** | Number of active days |  [optional]

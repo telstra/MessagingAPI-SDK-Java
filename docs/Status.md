@@ -1,4 +1,5 @@
 
+
 # Status
 
 ## Enum
@@ -16,9 +17,9 @@
 
 * `UNDVBL` (value: `"UNDVBL"`)
 
-* `REJECTED` (value: `"REJECTED"`)
+* `REJECTD` (value: `"REJECTD"`)
 
-* `READ` (value: `"READ"`)
+* `UNKNOWN` (value: `"Unknown"`)
 
 
 

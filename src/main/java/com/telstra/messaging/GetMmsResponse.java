@@ -11,29 +11,295 @@
  */
 
 
-package com.telstra;
+package com.telstra.messaging;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.telstra.messaging.MMSContent;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * GetMmsResponse
+ */
+
+public class GetMmsResponse {
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private String status;
+
+  public static final String SERIALIZED_NAME_DESTINATION_ADDRESS = "destinationAddress";
+  @SerializedName(SERIALIZED_NAME_DESTINATION_ADDRESS)
+  private String destinationAddress;
+
+  public static final String SERIALIZED_NAME_SENDER_ADDRESS = "senderAddress";
+  @SerializedName(SERIALIZED_NAME_SENDER_ADDRESS)
+  private String senderAddress;
+
+  public static final String SERIALIZED_NAME_SUBJECT = "subject";
+  @SerializedName(SERIALIZED_NAME_SUBJECT)
+  private String subject;
+
+  public static final String SERIALIZED_NAME_MESSAGE_ID = "messageId";
+  @SerializedName(SERIALIZED_NAME_MESSAGE_ID)
+  private String messageId;
+
+  public static final String SERIALIZED_NAME_API_MSG_ID = "apiMsgId";
+  @SerializedName(SERIALIZED_NAME_API_MSG_ID)
+  private String apiMsgId;
+
+  public static final String SERIALIZED_NAME_SENT_TIMESTAMP = "sentTimestamp";
+  @SerializedName(SERIALIZED_NAME_SENT_TIMESTAMP)
+  private String sentTimestamp;
+
+  public static final String SERIALIZED_NAME_MM_S_CONTENT = "MMSContent";
+  @SerializedName(SERIALIZED_NAME_MM_S_CONTENT)
+  private List<MMSContent> mmSContent = new ArrayList<MMSContent>();
 
 
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+  public GetMmsResponse status(String status) {
+    
+    this.status = status;
+    return this;
+  }
 
-    /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
-     */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+   /**
+   * The final state of the message. 
+   * @return status
+  **/
+  @ApiModelProperty(example = "RECEIVED", required = true, value = "The final state of the message. ")
+
+  public String getStatus() {
+    return status;
+  }
+
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+
+  public GetMmsResponse destinationAddress(String destinationAddress) {
+    
+    this.destinationAddress = destinationAddress;
+    return this;
+  }
+
+   /**
+   * The number the message was sent to. 
+   * @return destinationAddress
+  **/
+  @ApiModelProperty(example = "61412345678", required = true, value = "The number the message was sent to. ")
+
+  public String getDestinationAddress() {
+    return destinationAddress;
+  }
+
+
+  public void setDestinationAddress(String destinationAddress) {
+    this.destinationAddress = destinationAddress;
+  }
+
+
+  public GetMmsResponse senderAddress(String senderAddress) {
+    
+    this.senderAddress = senderAddress;
+    return this;
+  }
+
+   /**
+   * The number the message was sent from. 
+   * @return senderAddress
+  **/
+  @ApiModelProperty(example = "61487654321", required = true, value = "The number the message was sent from. ")
+
+  public String getSenderAddress() {
+    return senderAddress;
+  }
+
+
+  public void setSenderAddress(String senderAddress) {
+    this.senderAddress = senderAddress;
+  }
+
+
+  public GetMmsResponse subject(String subject) {
+    
+    this.subject = subject;
+    return this;
+  }
+
+   /**
+   * The subject assigned to the message. 
+   * @return subject
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The subject assigned to the message. ")
+
+  public String getSubject() {
+    return subject;
+  }
+
+
+  public void setSubject(String subject) {
+    this.subject = subject;
+  }
+
+
+  public GetMmsResponse messageId(String messageId) {
+    
+    this.messageId = messageId;
+    return this;
+  }
+
+   /**
+   * Message Id assigned by the MMSC. 
+   * @return messageId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Message Id assigned by the MMSC. ")
+
+  public String getMessageId() {
+    return messageId;
+  }
+
+
+  public void setMessageId(String messageId) {
+    this.messageId = messageId;
+  }
+
+
+  public GetMmsResponse apiMsgId(String apiMsgId) {
+    
+    this.apiMsgId = apiMsgId;
+    return this;
+  }
+
+   /**
+   * Message Id assigned by the API. 
+   * @return apiMsgId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Message Id assigned by the API. ")
+
+  public String getApiMsgId() {
+    return apiMsgId;
+  }
+
+
+  public void setApiMsgId(String apiMsgId) {
+    this.apiMsgId = apiMsgId;
+  }
+
+
+  public GetMmsResponse sentTimestamp(String sentTimestamp) {
+    
+    this.sentTimestamp = sentTimestamp;
+    return this;
+  }
+
+   /**
+   * Time handling of the message ended. 
+   * @return sentTimestamp
+  **/
+  @ApiModelProperty(example = "2018-11-23T16:14:02+10:00", required = true, value = "Time handling of the message ended. ")
+
+  public String getSentTimestamp() {
+    return sentTimestamp;
+  }
+
+
+  public void setSentTimestamp(String sentTimestamp) {
+    this.sentTimestamp = sentTimestamp;
+  }
+
+
+  public GetMmsResponse mmSContent(List<MMSContent> mmSContent) {
+    
+    this.mmSContent = mmSContent;
+    return this;
+  }
+
+  public GetMmsResponse addMmSContentItem(MMSContent mmSContentItem) {
+    this.mmSContent.add(mmSContentItem);
+    return this;
+  }
+
+   /**
+   * An array of content that was received in an MMS message. 
+   * @return mmSContent
+  **/
+  @ApiModelProperty(required = true, value = "An array of content that was received in an MMS message. ")
+
+  public List<MMSContent> getMmSContent() {
+    return mmSContent;
+  }
+
+
+  public void setMmSContent(List<MMSContent> mmSContent) {
+    this.mmSContent = mmSContent;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
     }
-
-    /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
-     */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    GetMmsResponse getMmsResponse = (GetMmsResponse) o;
+    return Objects.equals(this.status, getMmsResponse.status) &&
+        Objects.equals(this.destinationAddress, getMmsResponse.destinationAddress) &&
+        Objects.equals(this.senderAddress, getMmsResponse.senderAddress) &&
+        Objects.equals(this.subject, getMmsResponse.subject) &&
+        Objects.equals(this.messageId, getMmsResponse.messageId) &&
+        Objects.equals(this.apiMsgId, getMmsResponse.apiMsgId) &&
+        Objects.equals(this.sentTimestamp, getMmsResponse.sentTimestamp) &&
+        Objects.equals(this.mmSContent, getMmsResponse.mmSContent);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(status, destinationAddress, senderAddress, subject, messageId, apiMsgId, sentTimestamp, mmSContent);
+  }
+
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class GetMmsResponse {\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    destinationAddress: ").append(toIndentedString(destinationAddress)).append("\n");
+    sb.append("    senderAddress: ").append(toIndentedString(senderAddress)).append("\n");
+    sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
+    sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
+    sb.append("    apiMsgId: ").append(toIndentedString(apiMsgId)).append("\n");
+    sb.append("    sentTimestamp: ").append(toIndentedString(sentTimestamp)).append("\n");
+    sb.append("    mmSContent: ").append(toIndentedString(mmSContent)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
 }
+

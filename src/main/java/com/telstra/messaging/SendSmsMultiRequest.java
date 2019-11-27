@@ -11,29 +11,129 @@
  */
 
 
-package com.telstra;
+package com.telstra.messaging;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.telstra.messaging.MessageMulti;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * SendSmsMultiRequest
+ */
+
+public class SendSmsMultiRequest {
+  public static final String SERIALIZED_NAME_SMS_MULTI = "smsMulti";
+  @SerializedName(SERIALIZED_NAME_SMS_MULTI)
+  private List<MessageMulti> smsMulti = null;
+
+  public static final String SERIALIZED_NAME_NOTIY_U_R_L = "notiyURL";
+  @SerializedName(SERIALIZED_NAME_NOTIY_U_R_L)
+  private String notiyURL;
 
 
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+  public SendSmsMultiRequest smsMulti(List<MessageMulti> smsMulti) {
+    
+    this.smsMulti = smsMulti;
+    return this;
+  }
 
-    /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
-     */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+  public SendSmsMultiRequest addSmsMultiItem(MessageMulti smsMultiItem) {
+    if (this.smsMulti == null) {
+      this.smsMulti = new ArrayList<MessageMulti>();
     }
+    this.smsMulti.add(smsMultiItem);
+    return this;
+  }
 
-    /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
-     */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+   /**
+   * Multiple SMS. Up to 10 messages can be sent in one API call.
+   * @return smsMulti
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Multiple SMS. Up to 10 messages can be sent in one API call.")
+
+  public List<MessageMulti> getSmsMulti() {
+    return smsMulti;
+  }
+
+
+  public void setSmsMulti(List<MessageMulti> smsMulti) {
+    this.smsMulti = smsMulti;
+  }
+
+
+  public SendSmsMultiRequest notiyURL(String notiyURL) {
+    
+    this.notiyURL = notiyURL;
+    return this;
+  }
+
+   /**
+   * Contains a URL that will be called once your message has been processed. The status may be delivered, expired, deleted, etc. Please refer to the Delivery Status section for more information.  If you are using a domain URL you must include the forward slash at the end of the URL (e.g. http://www.example.com/). 
+   * @return notiyURL
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "http://www.example.com/", value = "Contains a URL that will be called once your message has been processed. The status may be delivered, expired, deleted, etc. Please refer to the Delivery Status section for more information.  If you are using a domain URL you must include the forward slash at the end of the URL (e.g. http://www.example.com/). ")
+
+  public String getNotiyURL() {
+    return notiyURL;
+  }
+
+
+  public void setNotiyURL(String notiyURL) {
+    this.notiyURL = notiyURL;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
     }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    SendSmsMultiRequest sendSmsMultiRequest = (SendSmsMultiRequest) o;
+    return Objects.equals(this.smsMulti, sendSmsMultiRequest.smsMulti) &&
+        Objects.equals(this.notiyURL, sendSmsMultiRequest.notiyURL);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(smsMulti, notiyURL);
+  }
+
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class SendSmsMultiRequest {\n");
+    sb.append("    smsMulti: ").append(toIndentedString(smsMulti)).append("\n");
+    sb.append("    notiyURL: ").append(toIndentedString(notiyURL)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
 }
+

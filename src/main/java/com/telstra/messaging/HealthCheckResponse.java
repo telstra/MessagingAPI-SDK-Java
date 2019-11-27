@@ -11,29 +11,90 @@
  */
 
 
-package com.telstra;
+package com.telstra.messaging;
+
+import java.util.Objects;
+import java.util.Arrays;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+
+/**
+ * Information regarding service being up or down. 
+ */
+@ApiModel(description = "Information regarding service being up or down. ")
+
+public class HealthCheckResponse {
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
+  private String status;
 
 
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+  public HealthCheckResponse status(String status) {
+    
+    this.status = status;
+    return this;
+  }
 
-    /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
-     */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+   /**
+   * message status
+   * @return status
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "up", value = "message status")
+
+  public String getStatus() {
+    return status;
+  }
+
+
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
     }
-
-    /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
-     */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    HealthCheckResponse healthCheckResponse = (HealthCheckResponse) o;
+    return Objects.equals(this.status, healthCheckResponse.status);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(status);
+  }
+
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class HealthCheckResponse {\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
 }
+
