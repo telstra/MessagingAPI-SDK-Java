@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 
 group = 'Telstra'
-version = '1.0.0'
+version = '1.0.8'
 
 buildscript {
     repositories {
@@ -104,8 +104,10 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.14.2'
     compile 'com.google.code.gson:gson:2.8.5'
     compile 'io.gsonfire:gson-fire:1.8.3'
+    compile group: 'org.apache.oltu.oauth2', name: 'org.apache.oltu.oauth2.client', version: '1.0.1'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
     compile 'org.threeten:threetenbp:1.4.0'
-    testCompile 'junit:junit:4.12'
+    testCompile 'junit:junit:4.13'
 }
 
 javadoc {
