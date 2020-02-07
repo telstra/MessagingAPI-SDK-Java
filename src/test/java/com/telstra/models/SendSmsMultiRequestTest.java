@@ -1,6 +1,6 @@
 /*
  * Telstra Messaging API
- * The API specification for Telstra Messaging API
+ * The Telstra Messaging API specification
  *
  * The version of the OpenAPI document: 2.2.9
  * 
@@ -52,11 +52,11 @@ public class SendSmsMultiRequestTest {
     }
 
     /**
-     * Test the property 'notiyURL'
+     * Test the property 'notifyURL'
      */
     @Test
-    public void notiyURLTest() {
-        // TODO: test notiyURL
+    public void notifyURLTest() {
+        // TODO: test notifyURL
     }
 
 }

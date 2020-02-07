@@ -1,6 +1,6 @@
 /*
  * Telstra Messaging API
- * The API specification for Telstra Messaging API
+ * The Telstra Messaging API specification
  *
  * The version of the OpenAPI document: 2.2.9
  * 
@@ -36,9 +36,9 @@ public class SendSmsMultiRequest {
   @SerializedName(SERIALIZED_NAME_SMS_MULTI)
   private List<MessageMulti> smsMulti = null;
 
-  public static final String SERIALIZED_NAME_NOTIY_U_R_L = "notiyURL";
-  @SerializedName(SERIALIZED_NAME_NOTIY_U_R_L)
-  private String notiyURL;
+  public static final String SERIALIZED_NAME_NOTIFY_U_R_L = "notifyURL";
+  @SerializedName(SERIALIZED_NAME_NOTIFY_U_R_L)
+  private String notifyURL;
 
 
   public SendSmsMultiRequest smsMulti(List<MessageMulti> smsMulti) {
@@ -72,26 +72,26 @@ public class SendSmsMultiRequest {
   }
 
 
-  public SendSmsMultiRequest notiyURL(String notiyURL) {
+  public SendSmsMultiRequest notifyURL(String notifyURL) {
     
-    this.notiyURL = notiyURL;
+    this.notifyURL = notifyURL;
     return this;
   }
 
    /**
-   * Contains a URL that will be called once your message has been processed. The status may be delivered, expired, deleted, etc. Please refer to the Delivery Status section for more information.  If you are using a domain URL you must include the forward slash at the end of the URL (e.g. http://www.example.com/). 
-   * @return notiyURL
+   * Contains a URL that will be called once your message has been processed. The status may be delivered, expired, deleted, etc. Please refer to the Delivery Status section for more information.  If you are using a domain URL you must include the forward slash at the end of the URL (e.g. http://www.example.com/).  This is required when &#x60;\&quot;receiptOff\&quot;&#x60; is missing or &#x60;\&quot;receiptOff\&quot;:\&quot;false\&quot;&#x60;. 
+   * @return notifyURL
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "http://www.example.com/", value = "Contains a URL that will be called once your message has been processed. The status may be delivered, expired, deleted, etc. Please refer to the Delivery Status section for more information.  If you are using a domain URL you must include the forward slash at the end of the URL (e.g. http://www.example.com/). ")
+  @ApiModelProperty(example = "http://www.example.com/", value = "Contains a URL that will be called once your message has been processed. The status may be delivered, expired, deleted, etc. Please refer to the Delivery Status section for more information.  If you are using a domain URL you must include the forward slash at the end of the URL (e.g. http://www.example.com/).  This is required when `\"receiptOff\"` is missing or `\"receiptOff\":\"false\"`. ")
 
-  public String getNotiyURL() {
-    return notiyURL;
+  public String getNotifyURL() {
+    return notifyURL;
   }
 
 
-  public void setNotiyURL(String notiyURL) {
-    this.notiyURL = notiyURL;
+  public void setNotifyURL(String notifyURL) {
+    this.notifyURL = notifyURL;
   }
 
 
@@ -105,12 +105,12 @@ public class SendSmsMultiRequest {
     }
     SendSmsMultiRequest sendSmsMultiRequest = (SendSmsMultiRequest) o;
     return Objects.equals(this.smsMulti, sendSmsMultiRequest.smsMulti) &&
-        Objects.equals(this.notiyURL, sendSmsMultiRequest.notiyURL);
+        Objects.equals(this.notifyURL, sendSmsMultiRequest.notifyURL);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(smsMulti, notiyURL);
+    return Objects.hash(smsMulti, notifyURL);
   }
 
 
@@ -119,7 +119,7 @@ public class SendSmsMultiRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class SendSmsMultiRequest {\n");
     sb.append("    smsMulti: ").append(toIndentedString(smsMulti)).append("\n");
-    sb.append("    notiyURL: ").append(toIndentedString(notiyURL)).append("\n");
+    sb.append("    notifyURL: ").append(toIndentedString(notifyURL)).append("\n");
     sb.append("}");
     return sb.toString();
   }

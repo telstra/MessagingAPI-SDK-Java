@@ -1,6 +1,6 @@
 /*
  * Telstra Messaging API
- * The API specification for Telstra Messaging API
+ * The Telstra Messaging API specification
  *
  * The version of the OpenAPI document: 2.2.9
  * 
@@ -391,7 +391,7 @@ public class MessagingApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/messages/mms/heathcheck";
+        String localVarPath = "/messages/mms/healthcheck";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -798,7 +798,7 @@ public class MessagingApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/messages/sms/heathcheck";
+        String localVarPath = "/messages/sms/healthcheck";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -906,7 +906,7 @@ public class MessagingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when receiptOff is missing or receiptOff&#x3D;false but notifyURL is missing  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when &#x60;\&quot;receiptOff\&quot;&#x60; is missing or &#x60;\&quot;receiptOff\&quot;:\&quot;false\&quot;&#x60; but notifyURL is missing  </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Technical error : Unable to route the message to a Target Endpoint : An error has occurred while processing your request, please refer to API Docs for summary on the issue  </td><td>  -  </td></tr>
         <tr><td> 501 </td><td> The HTTP method being used has not yet been implemented for the requested resource  </td><td>  -  </td></tr>
         <tr><td> 503 </td><td> The service requested is currently unavailable </td><td>  -  </td></tr>
@@ -938,7 +938,7 @@ public class MessagingApi {
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "auth" };
         return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
@@ -966,7 +966,7 @@ public class MessagingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when receiptOff is missing or receiptOff&#x3D;false but notifyURL is missing  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when &#x60;\&quot;receiptOff\&quot;&#x60; is missing or &#x60;\&quot;receiptOff\&quot;:\&quot;false\&quot;&#x60; but notifyURL is missing  </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Technical error : Unable to route the message to a Target Endpoint : An error has occurred while processing your request, please refer to API Docs for summary on the issue  </td><td>  -  </td></tr>
         <tr><td> 501 </td><td> The HTTP method being used has not yet been implemented for the requested resource  </td><td>  -  </td></tr>
         <tr><td> 503 </td><td> The service requested is currently unavailable </td><td>  -  </td></tr>
@@ -988,7 +988,7 @@ public class MessagingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when receiptOff is missing or receiptOff&#x3D;false but notifyURL is missing  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when &#x60;\&quot;receiptOff\&quot;&#x60; is missing or &#x60;\&quot;receiptOff\&quot;:\&quot;false\&quot;&#x60; but notifyURL is missing  </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Technical error : Unable to route the message to a Target Endpoint : An error has occurred while processing your request, please refer to API Docs for summary on the issue  </td><td>  -  </td></tr>
         <tr><td> 501 </td><td> The HTTP method being used has not yet been implemented for the requested resource  </td><td>  -  </td></tr>
         <tr><td> 503 </td><td> The service requested is currently unavailable </td><td>  -  </td></tr>
@@ -1012,7 +1012,7 @@ public class MessagingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when receiptOff is missing or receiptOff&#x3D;false but notifyURL is missing  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when &#x60;\&quot;receiptOff\&quot;&#x60; is missing or &#x60;\&quot;receiptOff\&quot;:\&quot;false\&quot;&#x60; but notifyURL is missing  </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> Technical error : Unable to route the message to a Target Endpoint : An error has occurred while processing your request, please refer to API Docs for summary on the issue  </td><td>  -  </td></tr>
         <tr><td> 501 </td><td> The HTTP method being used has not yet been implemented for the requested resource  </td><td>  -  </td></tr>
         <tr><td> 503 </td><td> The service requested is currently unavailable </td><td>  -  </td></tr>
