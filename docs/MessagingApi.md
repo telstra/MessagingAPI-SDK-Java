@@ -6,10 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getMMSStatus**](MessagingApi.md#getMMSStatus) | **GET** /messages/mms/{messageid}/status | Get MMS Status
 [**getSMSStatus**](MessagingApi.md#getSMSStatus) | **GET** /messages/sms/{messageId}/status | Get SMS Status
-[**mMSHealthCheck**](MessagingApi.md#mMSHealthCheck) | **GET** /messages/mms/heathcheck | MMS Health Check
+[**mMSHealthCheck**](MessagingApi.md#mMSHealthCheck) | **GET** /messages/mms/healthcheck | MMS Health Check
 [**retrieveMMSReplies**](MessagingApi.md#retrieveMMSReplies) | **GET** /messages/mms | Retrieve MMS Replies
 [**retrieveSMSReplies**](MessagingApi.md#retrieveSMSReplies) | **GET** /messages/sms | Retrieve SMS Replies
-[**sMSHealthCheck**](MessagingApi.md#sMSHealthCheck) | **GET** /messages/sms/heathcheck | SMS Health Check
+[**sMSHealthCheck**](MessagingApi.md#sMSHealthCheck) | **GET** /messages/sms/healthcheck | SMS Health Check
 [**sMSMulti**](MessagingApi.md#sMSMulti) | **POST** /messages/sms/multi | Send Multiple SMS
 [**sendMMS**](MessagingApi.md#sendMMS) | **POST** /messages/mms | Send MMS
 [**sendSMS**](MessagingApi.md#sendSMS) | **POST** /messages/sms | Send SMS
@@ -457,6 +457,7 @@ Send multiple SMS in one API call.
 import com.telstra.ApiClient;
 import com.telstra.ApiException;
 import com.telstra.Configuration;
+import com.telstra.auth.*;
 import com.telstra.models.*;
 import com.telstra.messaging.MessagingApi;
 
@@ -464,6 +465,10 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://tapi.telstra.com/v2");
+    
+    // Configure OAuth2 access token for authorization: auth
+    OAuth auth = (OAuth) defaultClient.getAuthentication("auth");
+    auth.setAccessToken("YOUR ACCESS TOKEN");
 
     MessagingApi apiInstance = new MessagingApi(defaultClient);
     SendSmsMultiRequest payload = new SendSmsMultiRequest(); // SendSmsMultiRequest | A JSON payload containing the recipient's phone number and text message. This number can be in international format if preceeded by a '+' or in national format ('04xxxxxxxx') where x is a digit. 
@@ -493,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -504,7 +509,7 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Success |  -  |
-**400** | Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when receiptOff is missing or receiptOff&#x3D;false but notifyURL is missing  |  -  |
+**400** | Invalid or missing request parameters * DR-NOTIFY-URL-MISSING : when &#x60;\&quot;receiptOff\&quot;&#x60; is missing or &#x60;\&quot;receiptOff\&quot;:\&quot;false\&quot;&#x60; but notifyURL is missing  |  -  |
 **500** | Technical error : Unable to route the message to a Target Endpoint : An error has occurred while processing your request, please refer to API Docs for summary on the issue  |  -  |
 **501** | The HTTP method being used has not yet been implemented for the requested resource  |  -  |
 **503** | The service requested is currently unavailable |  -  |
