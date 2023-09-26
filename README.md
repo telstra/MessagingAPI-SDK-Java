@@ -123,30 +123,7 @@ Class | Method | HTTP request | Description
 *VirtualNumbersApi* | [**getVirtualNumber**](docs/VirtualNumbersApi.md#getVirtualNumber) | **GET** /virtual-numbers/{virtual-number} | fetch a virtual number
 *VirtualNumbersApi* | [**updateNumber**](docs/VirtualNumbersApi.md#updateNumber) | **PUT** /virtual-numbers/{virtual-number} | update a virtual number
 
-## Documentation for Models
 
- - [FreeTrialNumbers](docs/FreeTrialNumbers.md)
- - [GetMessages200Response](docs/GetMessages200Response.md)
- - [GetNumbers200Response](docs/GetNumbers200Response.md)
- - [GetRecipientOptouts200Response](docs/GetRecipientOptouts200Response.md)
- - [GetReportId200Response](docs/GetReportId200Response.md)
- - [GetReports200Response](docs/GetReports200Response.md)
- - [GetReports200ResponseReportsInner](docs/GetReports200ResponseReportsInner.md)
- - [HealthCheck200Response](docs/HealthCheck200Response.md)
- - [GetMessages200ResponsePaging](docs/GetMessages200ResponsePaging.md)
- - [GetReports201Response](docs/GetReports201Response.md)
- - [MessageGet](docs/MessageGet.md)
- - [MessageSent](docs/MessageSent.md)
- - [MessageUpdate](docs/MessageUpdate.md)
- - [Multimedia](docs/Multimedia.md)
- - [MultimediaGet](docs/MultimediaGet.md)
- - [OAuth](docs/OAuth.md)
- - [OauthTokenBody](docs/OauthTokenBody.md)
- - [OneOfMessageSentMessageId](docs/OneOfMessageSentMessageId.md)
- - [OneOfMessageSentTo](docs/OneOfMessageSentTo.md)
- - [RecipientOptout](docs/RecipientOptout.md)
- - [ReportsMessagesBody](docs/ReportsMessagesBody.md)
- - [VirtualNumber](docs/VirtualNumber.md)
 
 ## Documentation for Authorization
 
