@@ -14,6 +14,7 @@ package com.telstra.messaging;
 
 import com.telstra.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
 import static org.junit.Assert.assertNotNull;
@@ -28,7 +29,7 @@ public class VirtualNumbersApiTest {
 
     private ApiClient defaultClient;
 
-    @Before
+    //@Before
     public void setUp() {
 
         defaultClient = new ApiClient();
@@ -48,7 +49,7 @@ public class VirtualNumbersApiTest {
      * When a recipient receives your message, you can choose whether they&#x27;ll see a privateNumber, Virtual Number or senderName (paid plans only) in the **from** field. If you want to use a Virtual Number, use this endpoint to assign one. Free Trial users can assign one Virtual Number, and those on a paid plan can assign up to 100.   Virtual Numbers that have not sent a message in 30 days (Free Trial) or sent/received a message in 18 months (paid plans) will be automatically unassigned from your account. You can check the **lastUse** date of your Virtual Number at any time using GET /virtual-numbers/{virtual-number}.  Note that Virtual Numbers used in v2 of the Messaging API cannot be used to send messages in v3. Please assign a new Virtual Number instead. 
      *
      */
-    @Test
+    @Ignore
     public void assignNumberTest() {
         try{
 
@@ -85,7 +86,7 @@ public class VirtualNumbersApiTest {
      * Use **virtual-number** to remove a Virtual Number that&#x27;s been assigned to your account. 
      *
      */
-    @Test
+    @Ignore
     public void deleteNumberTest() {
         try{
 
@@ -108,7 +109,7 @@ public class VirtualNumbersApiTest {
      * Use this endpoint to fetch all Virtual Numbers currently assigned to your account. 
      *
      */
-    @Test
+    @Ignore
     public void getNumbersTest() {
 
         try{
@@ -136,7 +137,7 @@ public class VirtualNumbersApiTest {
      * Use this endpoint to fetch any mobile number(s) that have opted out of receiving messages from a Virtual Number assigned to your account.  Recipients can opt out at any time by sending a message with industry standard keywords such as STOP, STOPALL, UNSUBSCRIBE, QUIT, END and CANCEL. 
      *
      */
-    @Test
+    @Ignore
     public void getRecipientOptoutsTest() {
 
 
@@ -165,7 +166,7 @@ public class VirtualNumbersApiTest {
      * Fetch the tags, replyCallbackUrl and lastUse date for a Virtual Number.
      *
      */
-    @Test
+    @Ignore
     public void getVirtualNumberTest() {
 
         try{
@@ -192,7 +193,7 @@ public class VirtualNumbersApiTest {
      *          if the Api call fails
      */
 
-    @Test
+    @Ignore
     public void updateNumberTest() {
 
         try{

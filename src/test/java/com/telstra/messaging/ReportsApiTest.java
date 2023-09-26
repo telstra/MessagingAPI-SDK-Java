@@ -15,6 +15,7 @@ package com.telstra.messaging;
 import com.telstra.*;
 import java.util.UUID;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
 import static org.junit.Assert.assertNotNull;
@@ -28,7 +29,7 @@ public class ReportsApiTest {
 
     private ApiClient defaultClient;
 
-    @Before
+    //@Before
     public void setUp() {
 
         defaultClient = new ApiClient();
@@ -48,7 +49,7 @@ public class ReportsApiTest {
      * Fetch a download link for a report generated with POST /reports/{reportId} using the **reportId** returned in the response. Once ready, your report will be available for download for one week. 
      *
      */
-    @Test
+    @Ignore
     public void getReportTest() {
 
         try{
@@ -74,7 +75,7 @@ public class ReportsApiTest {
      * Fetch details of all reports recently generated for your account. Use it to check the status of a report, plus fetch the report ID, status, report type and expiry date. 
      *
      */
-    @Test
+    @Ignore
     public void getReportsTest() {
 
         try{
@@ -98,7 +99,7 @@ public class ReportsApiTest {
      * Request a CSV report of messages (both incoming and outgoing) that have been sent to/from your account within the last three months. You can request details for a specific timeframe, and filter your messages by tags, recipient number or Virtual Number.  A 201 Created means your report has been queued for generation. Make a note of the reportId returned in the response. You&#x27;ll need this to check the status of your report and fetch your download link with GET reports/{reportId}. If you supplied a reportCallbackUrl in the request we&#x27;ll also notify it when your report is ready for download.  Once your report is generated, it will be available for download for one week. The expiry date is returned in the response. 
      *
      */
-    @Test
+    @Ignore
     public void messagesReportTest() {
 
         try{

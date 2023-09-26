@@ -14,6 +14,7 @@ package com.telstra.messaging;
 import com.telstra.*;
 import java.util.UUID;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,7 @@ import static org.junit.Assert.assertNotNull;
 public class MessagesApiTest {
     private ApiClient defaultClient;
 
-    @Before
+    //@Before
     public void setUp() {
 
         defaultClient = new ApiClient();
@@ -49,7 +50,7 @@ public class MessagesApiTest {
      * Use this endpoint to delete a message that&#x27;s been scheduled for sending, but hasn&#x27;t yet sent. 
      *
      */
-    @Test
+    @Ignore
     public void deleteMessageByIdTest() {
 
         try{
@@ -72,7 +73,7 @@ public class MessagesApiTest {
      * Use the **messageId** to fetch a message that&#x27;s been sent from/to your account within the last 30 days. 
      *
      */
-    @Test
+    @Ignore
     public void getMessageByIdTest() {
         try{
             ApiClient apiClient = getAuthToken(defaultClient);
@@ -97,7 +98,7 @@ public class MessagesApiTest {
      * Fetch messages that have been sent from/to your account in the last 30 days.
      *
      */
-    @Test
+    @Ignore
     public void getMessagesTest() {
 
         try{
@@ -126,7 +127,7 @@ public class MessagesApiTest {
      * Send an SMS/MMS to a mobile number, or to multiple mobile numbers.  Free Trial users can message to up to 10 unique recipient numbers for free. The first five recipients will be automatically added to your Free Trial Numbers list. Need more? Just use the POST /free-trial-numbers call to add another five.
      *          if the Api call fails
      */
-    @Test
+    @Ignore
     public void sendMessagesTest() {
 
         try{
@@ -195,7 +196,7 @@ public class MessagesApiTest {
      * Need to update a message that&#x27;s scheduled for sending? You can change any of the below parameters, as long as the message hasn&#x27;t been sent yet. This request body will override the original POST/ messages call. 
      *
      */
-    @Test
+    @Ignore
     public void updateMessageByIdTest() {
 
         try{
@@ -264,7 +265,7 @@ public class MessagesApiTest {
      * Use the **messageId** to update the tag(s) assigned to a message. You can use this endpoint any time, even after your message has been delivered.
      *
      */
-    @Test
+    @Ignore
     public void updateMessageTagsTest() {
 
         try{

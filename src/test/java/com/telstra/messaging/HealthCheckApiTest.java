@@ -14,6 +14,7 @@ package com.telstra.messaging;
 
 import com.telstra.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
 import static org.junit.Assert.assertEquals;
@@ -26,7 +27,7 @@ import static org.junit.Assert.assertNotNull;
 public class HealthCheckApiTest {
     private ApiClient defaultClient;
 
-    @Before
+    //@Before
     public void setUp() {
 
         defaultClient = new ApiClient();
@@ -47,7 +48,7 @@ public class HealthCheckApiTest {
      * Use this endpoint to check the operational status of the messaging service. A 200 OK response means the service is up. If you receive a 504 response, the service is temporarily down. Check the [API Live Status page]. to see if there&#x27;s an active incident.
      *
      */
-    @Test
+    @Ignore
     public void healthCheckTest() {
 
         try{

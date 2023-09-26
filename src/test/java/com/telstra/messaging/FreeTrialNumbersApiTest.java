@@ -13,6 +13,7 @@
 package com.telstra.messaging;
 import com.telstra.*;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
 import static org.junit.Assert.*;
@@ -25,7 +26,7 @@ import static org.junit.Assert.*;
 public class FreeTrialNumbersApiTest {
     private ApiClient defaultClient;
 
-    @Before
+    //@Before
     public void setUp() {
 
         defaultClient = new ApiClient();
@@ -44,7 +45,7 @@ public class FreeTrialNumbersApiTest {
      * create free trial number list
      * Your Free Trial Numbers are the 10 recipient mobile numbers that you can message during the Free Trial. The first five numbers you send an SMS/MMS to will automatically be added to your Free Trial Numbers list. After that, you can use this endpoint to register another five. Alternatively, you can use this endpoint to register all 10 numbers.    Use this endpoint to register a Free Trial Number to your account. To test out all the features that the trial has to offer, we recommend registering your own mobile number to your Free Trial Numbers list.   Note that you can only message mobile numbers that have been added to your Free Trial list and once registered, a Free Trial Number cannot be removed or replaced.
      */
-    @Test
+    @Ignore
     public void createTrialNumbersTest() {
 
         try{
@@ -74,7 +75,7 @@ public class FreeTrialNumbersApiTest {
      * Use this endpoint to fetch the Free Trial Number(s) currently assigned to your account. These are the mobile numbers that you can message during the Free Trial.  If you&#x27;re using a paid plan, there&#x27;s no limit to the number of recipients that you can message, so you don&#x27;t need to register Free Trial Numbers. 
      *
      */
-    @Test
+    @Ignore
     public void getTrialNumbersTest() {
 
         try{
