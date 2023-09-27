@@ -34,24 +34,24 @@ Please refer to https://docs.github.com/en/packages/working-with-a-github-packag
 Please update settings.xml as described above:
 
 ```xml
-<profiles>
-<profile>
-<id>github</id>
-<repositories>
-<repository>
-<id>central</id>
-<url>https://repo1.maven.org/maven2</url>
-</repository>
-<repository>
-<id>github</id>
-<url>https://maven.pkg.github.com/telstra/MessagingAPI-SDK-Java</url>
-<snapshots>
-<enabled>true</enabled>
-</snapshots>
-</repository>
-</repositories>
-</profile>
-</profiles>
+  <profiles>
+    <profile>
+      <id>github</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/telstra/MessagingAPI-SDK-Java</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
 
   <servers>
     <server>
