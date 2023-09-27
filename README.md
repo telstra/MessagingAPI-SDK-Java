@@ -32,6 +32,8 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Please refer to https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry
 
 Please update settings.xml as described above:
+
+```xml
 <profiles>
 <profile>
 <id>github</id>
@@ -58,6 +60,7 @@ Please update settings.xml as described above:
       <password>TOKEN</password>
     </server>
   </servers>
+```
 
 Add this dependency to your project's POM:
 
