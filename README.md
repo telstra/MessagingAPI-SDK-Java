@@ -74,7 +74,7 @@ import static org.junit.Assert.assertNotNull;
 public class AuthenticationApiExample {
 
     public static void main(String[] args) {
-		ApiClient defaultClient = new ApiClient();
+	ApiClient defaultClient = new ApiClient();
         String clientId = "YOUR CLIENT ID";
         String clientSecret = "YOUR CLIENT SECRET";
         String grantType = "client_credentials";
@@ -288,7 +288,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
+    	VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
 	AssignNumberRequest assignNumberRequest = new AssignNumberRequest()
 			.replyCallbackUrl("http://www.example.com")
 			.addTagsItem("minim qui")
@@ -347,7 +347,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
+    	VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
 	String virtualNumber = "0428180739";
 	VirtualNumber response = virtualNumbersApi.getVirtualNumber(virtualNumber);
 	System.out.println(response);
@@ -443,7 +443,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
+    	VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
 	String virtualNumber ="0428180739";
 	String replyCallbackUrl = "http://www.example.com";
 
@@ -490,7 +490,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
+    	VirtualNumbersApi virtualNumbersApi = new VirtualNumbersApi(apiClient);
 	String virtualNumber = "0428180739";
 	virtualNumbersApi.deleteNumber(virtualNumber);
 } catch (ApiException e) {
@@ -621,7 +621,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    MessagesApi messagesApi = new MessagesApi(apiClient);
+    	MessagesApi messagesApi = new MessagesApi(apiClient);
 	String to = "0411220643";
 	String from = "0400000004";
 	String messageContent = "Hello customer, this is from CBA to confirme your offer!";
@@ -650,7 +650,7 @@ try{
 	tagsList.add("sit dolo");
 	tagsList.add("laborum qui");
     
-    SendMessagesRequest sendMessagesRequest = new SendMessagesRequest()
+    	SendMessagesRequest sendMessagesRequest = new SendMessagesRequest()
 			.to(to)
 			.from(from)
 			.messageContent(messageContent)
@@ -724,7 +724,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    MessagesApi messagesApi = new MessagesApi(apiClient);
+    	MessagesApi messagesApi = new MessagesApi(apiClient);
 	UUID messageId = UUID.fromString("3f58be60-4c71-11ee-a5b2-b5976390898d");
 
 	MessageGet response = messagesApi.getMessageById(messageId);
@@ -776,7 +776,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    MessagesApi messagesApi = new MessagesApi(apiClient);
+    	MessagesApi messagesApi = new MessagesApi(apiClient);
 	Integer limit = null;
 	Integer offset = null;
 	String direction = null;
@@ -863,7 +863,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    MessagesApi messagesApi = new MessagesApi(apiClient);
+    	MessagesApi messagesApi = new MessagesApi(apiClient);
 	UUID messageId = UUID.fromString("8540d774-4863-4d2b-b788-4ecb19412e85");
 
 	String to = "0400000001";
@@ -951,7 +951,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    MessagesApi messagesApi = new MessagesApi(apiClient);
+    	MessagesApi messagesApi = new MessagesApi(apiClient);
 	UUID messageId = UUID.fromString("8540d774-4863-4d2b-b788-4ecb19412e85");
 	UpdateMessageTagsRequest updateMessageTagsRequest = new UpdateMessageTagsRequest();
 	updateMessageTagsRequest.addTagsItem("marketing");
@@ -999,7 +999,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    MessagesApi messagesApi = new MessagesApi(apiClient);
+    	MessagesApi messagesApi = new MessagesApi(apiClient);
 	UUID messageId = UUID.fromString("119be970-4c71-11ee-a651-ad71114ff6eb");
 
 	messagesApi.deleteMessageById(messageId);
@@ -1113,7 +1113,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    ReportsApi reportsApi = new ReportsApi(apiClient);
+    	ReportsApi reportsApi = new ReportsApi(apiClient);
 	UUID reportId = UUID.fromString("2be7b580-4c34-11ee-a651-ad71114ff6eb");
 	GetReportId200Response response = reportsApi.getReport(reportId);
 	System.out.println(response);
@@ -1161,7 +1161,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    ReportsApi reportsApi = new ReportsApi(apiClient);
+    	ReportsApi reportsApi = new ReportsApi(apiClient);
 	GetReports200Response response = reportsApi.getReports();
 	System.out.println(response);
 	assertNotNull(response.getReports());
@@ -1204,7 +1204,7 @@ import static org.junit.Assert.assertNotNull;
 try{
 	ApiClient defaultClient = new ApiClient();
 	ApiClient apiClient = getAuthToken(defaultClient);
-    HealthCheckApi healthCheckApi = new HealthCheckApi(apiClient);
+    	HealthCheckApi healthCheckApi = new HealthCheckApi(apiClient);
 	HealthCheck200Response response = healthCheckApi.healthCheck();
 	System.out.println(response);
 	assertNotNull(response);
