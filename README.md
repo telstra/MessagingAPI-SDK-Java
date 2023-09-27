@@ -29,6 +29,35 @@ mvn clean deploy
 Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
 
 ### Maven users
+Please refer to https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry
+
+Please update settings.xml as described above:
+<profiles>
+<profile>
+<id>github</id>
+<repositories>
+<repository>
+<id>central</id>
+<url>https://repo1.maven.org/maven2</url>
+</repository>
+<repository>
+<id>github</id>
+<url>https://maven.pkg.github.com/telstra/MessagingAPI-SDK-Java</url>
+<snapshots>
+<enabled>true</enabled>
+</snapshots>
+</repository>
+</repositories>
+</profile>
+</profiles>
+
+  <servers>
+    <server>
+      <id>github</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
 
 Add this dependency to your project's POM:
 
@@ -65,37 +94,6 @@ Then manually install the following JARs:
 
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
-```java
-import com.telstra.*;
-import org.junit.Before;
-import org.junit.Test;
-import static org.junit.Assert.assertNotNull;
-
-public class AuthenticationApiExample {
-
-    public static void main(String[] args) {
-	ApiClient defaultClient = new ApiClient();
-        String clientId = "YOUR CLIENT ID";
-        String clientSecret = "YOUR CLIENT SECRET";
-        String grantType = "client_credentials";
-        String scope = "free-trial-numbers:read free-trial-numbers:write messages:read messages:write virtual-numbers:read virtual-numbers:write reports:read reports:write";
-
-        defaultClient.setAccessSecret(clientId, clientSecret, grantType, scope);
-        AuthenticationApi authenticationApi = new AuthenticationApi(defaultClient);
-        try {
-            OAuth oAuthResponse = authenticationApi.authToken(defaultClient.getClientId(), defaultClient.getClientSecret(), defaultClient.getGrantType(), defaultClient.getScope());
-            System.out.println("getAuthToken: " + oAuthResponse.getAccessToken());
-            assertNotNull(oAuthResponse.getAccessToken());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AuthenticationApi#authToken");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
 
 ## Documentation for API Endpoints
 
@@ -144,6 +142,39 @@ Authentication schemes defined for the API:
   - virtual-numbers:write: write information for virtual numbers
 
 
+```java
+import com.telstra.*;
+import com.telstra.messaging.AuthenticationApi;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.assertNotNull;
+
+public class AuthenticationApiExample {
+
+    public static void main(String[] args) {
+	ApiClient defaultClient = new ApiClient();
+        String clientId = "YOUR CLIENT ID";
+        String clientSecret = "YOUR CLIENT SECRET";
+        String grantType = "client_credentials";
+        String scope = "free-trial-numbers:read free-trial-numbers:write messages:read messages:write virtual-numbers:read virtual-numbers:write reports:read reports:write";
+
+        defaultClient.setAccessSecret(clientId, clientSecret, grantType, scope);
+        AuthenticationApi authenticationApi = new AuthenticationApi(defaultClient);
+        try {
+            OAuth oAuthResponse = authenticationApi.authToken(defaultClient.getClientId(), defaultClient.getClientSecret(), defaultClient.getGrantType(), defaultClient.getScope());
+            System.out.println("getAuthToken: " + oAuthResponse.getAccessToken());
+            assertNotNull(oAuthResponse.getAccessToken());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AuthenticationApi#authToken");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
 ## Recommendation
 
 It's recommended to create an instance of `ApiClient` per thread in a multithreaded environment to avoid any potential issues.
@@ -178,6 +209,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.FreeTrialNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -223,6 +255,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.FreeTrialNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -280,6 +313,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.VirtualNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -339,6 +373,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.VirtualNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -384,6 +419,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.VirtualNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -435,6 +471,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.VirtualNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -482,6 +519,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.VirtualNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -532,6 +570,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.VirtualNumbersApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
@@ -609,6 +648,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.MessagesApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -712,6 +752,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.MessagesApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -764,6 +805,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.MessagesApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -851,6 +893,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.MessagesApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -939,6 +982,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.MessagesApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -987,6 +1031,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.MessagesApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -1054,6 +1099,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.ReportsApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -1104,6 +1150,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.ReportsApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -1152,6 +1199,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.ReportsApi;
 import java.util.UUID;
 import org.junit.Before;
 import org.junit.Test;
@@ -1195,6 +1243,7 @@ For example:
 
 ```java
 import com.telstra.*;
+import com.telstra.messaging.HealthCheckApi;
 import org.junit.Before;
 import org.junit.Test;
 import static com.telstra.messaging.AuthenticationApi.getAuthToken;
