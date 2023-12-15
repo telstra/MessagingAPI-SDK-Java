@@ -167,10 +167,10 @@ public class MessageSent {
   }
 
    /**
-   * This will be either \&quot;privateNumber\&quot;, one of your Virtual Numbers or your senderName.
+   * This will be either one of your Virtual Numbers or your senderName.
    * @return from
   **/
-  @Schema(description = "This will be either \"privateNumber\", one of your Virtual Numbers or your senderName.")
+  @Schema(description = "This will be either one of your Virtual Numbers or your senderName.")
   public String getFrom() {
     return from;
   }

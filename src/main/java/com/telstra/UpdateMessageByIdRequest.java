@@ -94,7 +94,7 @@ public class UpdateMessageByIdRequest {
   }
 
    /**
-   * When the recipient receives your message, you can choose whether they&#39;ll see a privateNumber, virtualNumber or senderName (paid plans only) in the **from** field.  * privateNumber: Use this string to have the message appear on the recipient&#39;s device as from \&quot;anonymous\&quot;, \&quot;private\&quot; or similar. * 04xxxxxxxx: Use one of the Virtual Numbers associated with your account. You&#39;ll also be able to receive SMS replies to this number. * senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature). 
+   * When the recipient receives your message, you can choose whether they&#39;ll see a virtualNumber or senderName (paid plans only) in the **from** field.  * 04xxxxxxxx: Use one of the Virtual Numbers associated with your account. You&#39;ll also be able to receive SMS replies to this number. * senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature). 
    * @return from
   **/
 

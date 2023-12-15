@@ -291,7 +291,7 @@ please see here:
 
 ### Assign Virtual Number
 
-When a recipient receives your message, you can choose whether they'll see a privateNumber,
+When a recipient receives your message, you can choose whether they'll see a
 Virtual Number or senderName (paid plans only) in the from field.
 If you want to use a Virtual Number, use this function to assign one.
 For more information, please see here:
@@ -616,7 +616,7 @@ The function `messages.send` can be used to send a message.
 It takes an object with following properties as argument:
 
 -   `to`: The destination address, expected to be a phone number of the form `+614XXXXXXXX` or `04XXXXXXXX`.
--   `from`: This will be either "privateNumber", one of your Virtual Numbers or your senderName.
+-   `from`: This will be either one of your Virtual Numbers or your senderName.
 -   `messageContent` (Either one of messageContent or multimedia is required): The content of the message.
 -   `multimedia` (Either one of messageContent or multimedia is required): MMS multimedia content.
 -   `retryTimeout` (optional): How many minutes you asked the server to keep trying to send the message.
@@ -637,7 +637,7 @@ It returns an object with the following properties:
 -   `messageId`: Use this UUID with our other endpoints to fetch, update or delete the message.
 -   `status`: The status will be either queued, sent, delivered or expired.
 -   `to`: The recipient's mobile number(s).
--   `from`: This will be either "privateNumber", one of your Virtual Numbers or your senderName.
+-   `from`: This will be either one of your Virtual Numbers or your senderName.
 -   `messageContent`: The content of the message.
 -   `multimedia`: The multimedia content of the message (MMS only).
 -   `retryTimeout`: How many minutes you asked the server to keep trying to send the message.
@@ -739,7 +739,7 @@ It returns an object with the following properties:
 -   `sentTimestamp`: The time the message was sent from the server.
 -   `receivedTimestamp`: The time the message was received by the recipient's device.
 -   `to`: The recipient's mobile number(s).
--   `from`: This will be either "privateNumber", one of your Virtual Numbers or your senderName.
+-   `from`: This will be either one of your Virtual Numbers or your senderName.
 -   `messageContent`: The content of the message.
 -   `multimedia`: The multimedia content of the message (MMS only).
 -   `direction`: Direction of the message (outgoing or incoming).
@@ -854,7 +854,7 @@ It takes an object with following properties as argument:
 
 -   `messageId`: Use this UUID with our other endpoints to fetch, update or delete the message.
 -   `to`: The destination address, expected to be a phone number of the form `+614XXXXXXXX` or `04XXXXXXXX`.
--   `from`: This will be either "privateNumber", one of your Virtual Numbers or your senderName.
+-   `from`: This will be either one of your Virtual Numbers or your senderName.
 -   `messageContent` (Either one of messageContent or multimedia is required): The content of the message.
 -   `multimedia` (Either one of messageContent or multimedia is required): MMS multimedia content.
 -   `retryTimeout` (optional): How many minutes you asked the server to keep trying to send the message.
@@ -882,7 +882,7 @@ It returns an object with the following properties:
 -   `messageId`: Use this UUID with our other endpoints to fetch, update or delete the message.
 -   `status`: The status will be either queued, sent, delivered or expired.
 -   `to`: The recipient's mobile number(s).
--   `from`: This will be either "privateNumber", one of your Virtual Numbers or your senderName.
+-   `from`: This will be either one of your Virtual Numbers or your senderName.
 -   `messageContent`: The content of the message.
 -   `multimedia`: The multimedia content of the message (MMS only).
 -   `retryTimeout`: How many minutes you asked the server to keep trying to send the message.
